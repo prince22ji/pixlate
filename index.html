@@ -21,6 +21,9 @@
     PIXLATE DIGITAL — Front Pages
     ==================================================================== */
 
+  body { overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
+
   .pxlt-home {
     /* ---- Brand tokens ---- */
     --pxlt-red: #ED3224; /* Updated to match logo red */
@@ -50,7 +53,6 @@
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
   }
 
   .pxlt-home *,
@@ -254,6 +256,28 @@
     width: 22px; height: 2px;
     background: var(--pxlt-ink);
     transition: transform .3s ease, opacity .3s ease;
+  }
+
+  /* Scrolled / compact navbar */
+  .pxlt-nav { transition: padding .3s ease, box-shadow .3s ease; }
+  .pxlt-nav--scrolled {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .pxlt-nav--scrolled .pxlt-nav__row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .pxlt-nav--scrolled .pxlt-logo {
+    font-size: 20px;
+  }
+  .pxlt-nav--scrolled .pxlt-logo__mark {
+    width: 26px;
+    height: 26px;
+  }
+  .pxlt-nav--scrolled .pxlt-logo__mark::before,
+  .pxlt-nav--scrolled .pxlt-logo__mark::after {
+    width: 17px;
+    height: 17px;
   }
 
   /* ====================================================================
@@ -1562,6 +1586,18 @@
       
       var y = document.getElementById('pxltYear');
       if (y) y.textContent = new Date().getFullYear();
+
+      // Sticky navbar shrink on scroll
+      var nav = document.querySelector('.pxlt-nav');
+      if (nav) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 40) {
+            nav.classList.add('pxlt-nav--scrolled');
+          } else {
+            nav.classList.remove('pxlt-nav--scrolled');
+          }
+        }, { passive: true });
+      }
 
       // Scroll Counter Animation
       const counters = document.querySelectorAll('.pxlt-counter');
