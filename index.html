@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Pixlate Digital — Best Content Marketing & Creative Agency for Digital Brands</title>
+<meta name="description" content="Pixlate Digital is a creative marketing agency crafting engaging content, social campaigns, and brand experiences. Best content marketing agency for SEO, branding, short-form video, and performance marketing." />
+<meta name="keywords" content="best content marketing agency, creative marketing agency, digital marketing services, social media marketing, performance marketing agency, branding agency, SEO services, short form video agency, reels production, content creation, Pixlate Digital" />
+<meta property="og:title" content="Pixlate Digital — Crafted Digital Experiences" />
+<meta property="og:description" content="A creative marketing agency built for crafting engaging content, social campaigns & brand experiences." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Manrope:wght@300;400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ====================================================================
+   PIXLATE DIGITAL — Front Page
+   All styles scoped under .pxlt-home to avoid clashing with WP themes.
+   ==================================================================== */
+
+.pxlt-home {
+  /* ---- Brand tokens ---- */
+  --pxlt-red: #F73B33;
+  --pxlt-red-deep: #C22923;
+  --pxlt-red-soft: #FFE7E5;
+  --pxlt-grey: #CCCCCC;
+  --pxlt-grey-2: #F5F5F5;
+  --pxlt-grey-3: #E8E8E8;
+  --pxlt-ink: #0A0A0A;
+  --pxlt-ink-2: #1F1F1F;
+  --pxlt-muted: #5C5C5C;
+  --pxlt-white: #FFFFFF;
+
+  /* ---- Type ---- */
+  --pxlt-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --pxlt-script: 'Caveat', cursive;
+  --pxlt-body: 'Manrope', system-ui, sans-serif;
+
+  /* ---- Spacing ---- */
+  --pxlt-section-y: clamp(64px, 9vw, 130px);
+  --pxlt-container: 1240px;
+  --pxlt-radius: 6px;
+
+  font-family: var(--pxlt-body);
+  color: var(--pxlt-ink);
+  background: var(--pxlt-white);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.pxlt-home *,
+.pxlt-home *::before,
+.pxlt-home *::after { box-sizing: border-box; }
+
+.pxlt-home img, .pxlt-home svg { max-width: 100%; display: block; }
+.pxlt-home a { color: inherit; text-decoration: none; }
+.pxlt-home button { font-family: inherit; cursor: pointer; border: 0; background: transparent; }
+
+.pxlt-container {
+  width: 100%;
+  max-width: var(--pxlt-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============== Reusable buttons ============== */
+.pxlt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-family: var(--pxlt-body);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  border-radius: var(--pxlt-radius);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  white-space: nowrap;
+}
+.pxlt-btn--primary {
+  background: var(--pxlt-ink);
+  color: var(--pxlt-white) !important;
+  box-shadow: 4px 4px 0 0 var(--pxlt-red);
+}
+.pxlt-btn--primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--pxlt-red);
+}
+.pxlt-btn--ghost {
+  background: transparent;
+  color: var(--pxlt-ink);
+  border: 1.5px solid var(--pxlt-ink);
+}
+.pxlt-btn--ghost:hover {
+  background: var(--pxlt-ink);
+  color: var(--pxlt-white);
+}
+.pxlt-btn--light {
+  background: var(--pxlt-white);
+  color: var(--pxlt-ink);
+}
+.pxlt-btn--light:hover { background: var(--pxlt-red); color: var(--pxlt-white); }
+
+.pxlt-btn .arrow { transition: transform .25s ease; }
+.pxlt-btn:hover .arrow { transform: translateX(4px); }
+
+/* ============== Eyebrow / section headers ============== */
+.pxlt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pxlt-muted);
+}
+.pxlt-eyebrow::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--pxlt-red);
+  display: inline-block;
+}
+
+.pxlt-h2 {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 14px 0 18px;
+}
+.pxlt-lead {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: var(--pxlt-muted);
+  max-width: 60ch;
+}
+
+/* ====================================================================
+   TOP UTILITY BAR
+   ==================================================================== */
+.pxlt-utility {
+  background: var(--pxlt-ink);
+  color: var(--pxlt-white);
+  font-size: 13px;
+}
+.pxlt-utility__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pxlt-utility__left { display: flex; gap: 22px; flex-wrap: wrap; }
+.pxlt-utility a:hover { color: var(--pxlt-red); }
+.pxlt-utility .dot { color: var(--pxlt-red); margin: 0 4px; }
+
+/* ====================================================================
+   NAVBAR
+   ==================================================================== */
+.pxlt-nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.pxlt-nav__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  gap: 24px;
+}
+.pxlt-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--pxlt-display);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+.pxlt-logo__mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+.pxlt-logo__mark::before,
+.pxlt-logo__mark::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+}
+.pxlt-logo__mark::before {
+  background: var(--pxlt-red);
+  top: 0; left: 4px;
+  z-index: 2;
+}
+.pxlt-logo__mark::after {
+  background: var(--pxlt-grey);
+  bottom: 0; right: 0;
+  z-index: 1;
+}
+.pxlt-logo__txt span:last-child { font-weight: 400; color: var(--pxlt-muted); margin-left: 4px; font-size: 18px; }
+
+.pxlt-nav__menu {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pxlt-nav__menu a {
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  padding: 4px 0;
+}
+.pxlt-nav__menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--pxlt-red);
+  transition: width .3s ease;
+}
+.pxlt-nav__menu a:hover::after { width: 100%; }
+
+.pxlt-nav__toggle {
+  display: none;
+  width: 40px; height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.pxlt-nav__toggle span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--pxlt-ink);
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* ====================================================================
+   HERO
+   ==================================================================== */
+.pxlt-hero {
+  position: relative;
+  padding: clamp(40px, 7vw, 90px) 0 clamp(60px, 8vw, 100px);
+  overflow: hidden;
+}
+.pxlt-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.06) 1px, transparent 0);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  pointer-events: none;
+}
+.pxlt-hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+}
+.pxlt-hero__title {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: clamp(40px, 9vw, 124px);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  margin: 22px 0 28px;
+}
+.pxlt-hero__title .script {
+  font-family: var(--pxlt-script);
+  font-weight: 700;
+  color: var(--pxlt-red);
+  font-style: italic;
+  display: block;
+  font-size: 0.55em;
+  line-height: 1;
+  margin-bottom: -10px;
+  letter-spacing: 0;
+  transform: rotate(-3deg);
+  transform-origin: left;
+}
+.pxlt-hero__sub {
+  font-size: clamp(16px, 1.3vw, 18px);
+  color: var(--pxlt-muted);
+  max-width: 52ch;
+  margin-bottom: 32px;
+}
+.pxlt-hero__sub b { color: var(--pxlt-ink); font-weight: 700; }
+
+.pxlt-hero__cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.pxlt-hero__meta {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  max-width: 480px;
+}
+.pxlt-hero__meta-item .n {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--pxlt-red);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pxlt-hero__meta-item .l {
+  font-size: 13px;
+  color: var(--pxlt-muted);
+  margin-top: 4px;
+}
+
+.pxlt-hero__visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--pxlt-grey-2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.pxlt-hero__visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+.pxlt-hero__visual::before {
+  content: "";
+  position: absolute;
+  top: -18px; right: -18px;
+  width: 80px; height: 80px;
+  background: var(--pxlt-red);
+  z-index: 3;
+}
+.pxlt-hero__visual::after {
+  content: "";
+  position: absolute;
+  top: 36px; right: 18px;
+  width: 80px; height: 80px;
+  background: var(--pxlt-grey);
+  z-index: 2;
+}
+.pxlt-hero__badge {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  background: var(--pxlt-white);
+  padding: 14px 18px;
+  border-radius: var(--pxlt-radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 4;
+  font-size: 13px;
+}
+.pxlt-hero__badge strong {
+  display: block;
+  font-family: var(--pxlt-display);
+  font-size: 22px;
+  color: var(--pxlt-ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pxlt-hero__badge span { color: var(--pxlt-muted); }
+
+.pxlt-float-tag {
+  position: absolute;
+  top: 18%;
+  left: -30px;
+  background: var(--pxlt-ink);
+  color: var(--pxlt-white);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 20px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pxlt-float-tag::before {
+  content: "";
+  width: 8px; height: 8px;
+  background: var(--pxlt-red);
+  border-radius: 50%;
+  animation: pxlt-pulse 1.6s ease-in-out infinite;
+}
+@keyframes pxlt-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* ====================================================================
+   MARQUEE
+   ==================================================================== */
+.pxlt-marquee {
+  background: var(--pxlt-ink);
+  color: var(--pxlt-white);
+  padding: 22px 0;
+  overflow: hidden;
+  position: relative;
+}
+.pxlt-marquee__track {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: pxlt-scroll 28s linear infinite;
+  width: max-content;
+}
+.pxlt-marquee__item {
+  font-family: var(--pxlt-display);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+}
+.pxlt-marquee__item span:nth-child(even) { color: var(--pxlt-red); }
+@keyframes pxlt-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ====================================================================
+   WHO WE ARE
+   ==================================================================== */
+.pxlt-about {
+  padding: var(--pxlt-section-y) 0;
+  position: relative;
+}
+.pxlt-about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.pxlt-about__title .we {
+  color: var(--pxlt-red);
+  font-style: italic;
+}
+.pxlt-about__copy { font-size: 16px; color: var(--pxlt-muted); margin-bottom: 24px; }
+.pxlt-about__copy b { color: var(--pxlt-ink); font-weight: 700; }
+.pxlt-about__pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.pxlt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--pxlt-ink);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.pxlt-pill::before {
+  content: "";
+  width: 8px; height: 8px;
+  background: var(--pxlt-red);
+}
+
+.pxlt-about__collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 220px 180px;
+  gap: 16px;
+}
+.pxlt-about__collage > div {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.pxlt-about__collage > div img { width: 100%; height: 100%; object-fit: cover; }
+.pxlt-about__collage .c1 { grid-row: span 2; }
+.pxlt-about__collage .c-date {
+  background: var(--pxlt-grey-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+}
+.pxlt-about__collage .c-date .big {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--pxlt-ink);
+}
+.pxlt-about__collage .c-date .sm { font-size: 13px; color: var(--pxlt-muted); margin-top: 8px; }
+.pxlt-about__collage::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  width: 60px; height: 60px;
+  background: var(--pxlt-red);
+  z-index: 1;
+}
+
+/* ====================================================================
+   SERVICES
+   ==================================================================== */
+.pxlt-services {
+  background: var(--pxlt-ink);
+  color: var(--pxlt-white);
+  padding: var(--pxlt-section-y) 0;
+  position: relative;
+  overflow: hidden;
+}
+.pxlt-services::before {
+  content: "";
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 380px; height: 380px;
+  background: var(--pxlt-red);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+}
+.pxlt-services__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: end;
+  margin-bottom: 60px;
+}
+.pxlt-services .pxlt-eyebrow { color: rgba(255,255,255,0.7); }
+.pxlt-services .pxlt-h2 { color: var(--pxlt-white); }
+.pxlt-services .pxlt-lead { color: rgba(255,255,255,0.7); }
+
+.pxlt-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pxlt-service {
+  position: relative;
+  padding: 36px 28px 32px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  transition: transform .35s ease, background .35s ease, border-color .35s ease;
+  overflow: hidden;
+}
+.pxlt-service:hover {
+  transform: translateY(-6px);
+  background: rgba(247,59,51,0.08);
+  border-color: var(--pxlt-red);
+}
+.pxlt-service__num {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--pxlt-red);
+  letter-spacing: 0.1em;
+  margin-bottom: 22px;
+}
+.pxlt-service__icon {
+  width: 56px; height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pxlt-red);
+  color: var(--pxlt-white);
+  border-radius: 8px;
+  margin-bottom: 22px;
+}
+.pxlt-service__icon svg { width: 28px; height: 28px; }
+.pxlt-service h3 {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+.pxlt-service p {
+  font-size: 14.5px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin: 0 0 22px;
+}
+.pxlt-service__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pxlt-white);
+  border-bottom: 1px solid var(--pxlt-red);
+  padding-bottom: 4px;
+  transition: gap .25s ease;
+}
+.pxlt-service__link:hover { gap: 14px; }
+
+/* ====================================================================
+   WHY PIXLATE
+   ==================================================================== */
+.pxlt-why {
+  padding: var(--pxlt-section-y) 0;
+  background: var(--pxlt-white);
+  position: relative;
+  overflow: hidden;
+}
+.pxlt-why__head { max-width: 720px; margin-bottom: 50px; }
+.pxlt-why__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 2;
+}
+.pxlt-stat {
+  padding: 36px 28px;
+  background: var(--pxlt-grey-2);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: background .3s ease;
+}
+.pxlt-stat:hover { background: var(--pxlt-red-soft); }
+.pxlt-stat__n {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--pxlt-red);
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.pxlt-stat__n sup {
+  font-size: 0.35em;
+  font-weight: 700;
+  color: var(--pxlt-ink);
+  margin-top: 0.3em;
+}
+.pxlt-stat__l { font-size: 14px; color: var(--pxlt-muted); margin-top: 10px; max-width: 22ch; line-height: 1.4; }
+
+.pxlt-why__team {
+  background: var(--pxlt-grey-2);
+  border-radius: 12px;
+  padding: 50px 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+}
+.pxlt-why__team-text { padding-bottom: 50px; }
+.pxlt-why__team-text h3 {
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 16px 0 18px;
+}
+.pxlt-why__team-text p { color: var(--pxlt-muted); margin-bottom: 22px; }
+.pxlt-why__team-img { align-self: end; }
+.pxlt-why__team-img img { width: 100%; height: auto; display: block; border-top-left-radius: 12px; border-top-right-radius: 12px; }
+
+/* ====================================================================
+   PROCESS
+   ==================================================================== */
+.pxlt-process {
+  padding: var(--pxlt-section-y) 0;
+  background: var(--pxlt-grey-2);
+  position: relative;
+}
+.pxlt-process__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+.pxlt-process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+.pxlt-process__steps::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background-image: linear-gradient(to right, var(--pxlt-red) 50%, transparent 50%);
+  background-size: 12px 2px;
+  z-index: 0;
+}
+.pxlt-step { position: relative; z-index: 1; }
+.pxlt-step__num {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--pxlt-white);
+  border: 2px solid var(--pxlt-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--pxlt-display);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.pxlt-step__num::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--pxlt-red);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.pxlt-step__num span { position: relative; z-index: 2; transition: color .3s ease; }
+.pxlt-step:hover .pxlt-step__num::after { opacity: 1; }
+.pxlt-step:hover .pxlt-step__num span { color: var(--pxlt-white); }
+.pxlt-step h4 { font-family: var(--pxlt-display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 10px; }
+.pxlt-step p { font-size: 14.5px; color: var(--pxlt-muted); margin: 0; line-height: 1.6; }
+
+/* ====================================================================
+   WORK / PORTFOLIO
+   ==================================================================== */
+.pxlt-work {
+  padding: var(--pxlt-section-y) 0;
+  background: var(--pxlt-white);
+}
+.pxlt-work__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+.pxlt-work__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+.pxlt-case {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--pxlt-grey-2);
+  cursor: pointer;
+}
+.pxlt-case.span-3 { grid-column: span 3; aspect-ratio: 16 / 11; }
+.pxlt-case.span-2 { grid-column: span 2; }
+.pxlt-case__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.pxlt-case:hover .pxlt-case__bg { transform: scale(1.06); }
+.pxlt-case__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  color: var(--pxlt-white);
+}
+.pxlt-case__tag { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pxlt-red); margin-bottom: 8px; }
+.pxlt-case__title { font-family: var(--pxlt-display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; margin: 0; line-height: 1.15; }
+.pxlt-case--ill { background: linear-gradient(135deg, #FFE0DD 0%, #FFD3CF 100%); display: flex; align-items: flex-end; justify-content: center; }
+.pxlt-case--ill img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+
+/* ====================================================================
+   TESTIMONIALS
+   ==================================================================== */
+.pxlt-testimonials {
+  padding: var(--pxlt-section-y) 0;
+  background: var(--pxlt-grey-2);
+  position: relative;
+  overflow: hidden;
+}
+.pxlt-testimonials__head { text-align: center; margin-bottom: 60px; }
+.pxlt-testimonials__head .pxlt-eyebrow { justify-content: center; }
+.pxlt-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pxlt-quote {
+  background: var(--pxlt-white);
+  border-radius: 10px;
+  padding: 36px 30px;
+  position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.pxlt-quote:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+.pxlt-quote__mark { font-family: var(--pxlt-display); font-size: 64px; line-height: 0.3; color: var(--pxlt-red); font-weight: 700; height: 32px; margin-bottom: 18px; }
+.pxlt-quote__text { font-size: 16px; color: var(--pxlt-ink-2); margin-bottom: 24px; line-height: 1.65; }
+.pxlt-quote__author { display: flex; align-items: center; gap: 14px; }
+.pxlt-quote__avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--pxlt-grey); display: flex; align-items: center; justify-content: center; font-family: var(--pxlt-display); font-weight: 700; color: var(--pxlt-white); }
+.pxlt-quote__name { font-weight: 700; font-size: 15px; }
+.pxlt-quote__role { font-size: 13px; color: var(--pxlt-muted); }
+.pxlt-quote__stars { display: inline-flex; gap: 2px; margin-bottom: 14px; color: var(--pxlt-red); }
+
+/* ====================================================================
+   CTA
+   ==================================================================== */
+.pxlt-cta {
+  padding: var(--pxlt-section-y) 0;
+  background: var(--pxlt-white);
+}
+.pxlt-cta__box {
+  background: var(--pxlt-ink);
+  color: var(--pxlt-white);
+  padding: clamp(50px, 7vw, 90px) clamp(30px, 5vw, 80px);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.pxlt-cta__box::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: var(--pxlt-red); }
+.pxlt-cta__box::after { content: ""; position: absolute; top: 20px; right: 80px; width: 200px; height: 200px; background: rgba(255,255,255,0.08); }
+.pxlt-cta__box h2 { font-family: var(--pxlt-display); font-weight: 700; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 18px; position: relative; z-index: 2; }
+.pxlt-cta__box h2 em { font-family: var(--pxlt-script); font-style: italic; font-weight: 700; color: var(--pxlt-red); font-size: 1.1em; }
+.pxlt-cta__box p { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 48ch; position: relative; z-index: 2; }
+.pxlt-cta__actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 2; }
+.pxlt-cta__right { position: relative; z-index: 2; }
+.pxlt-cta__form { background: var(--pxlt-white); padding: 8px 8px 8px 22px; border-radius: 50px; display: flex; align-items: center; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+.pxlt-cta__form input { flex: 1; border: 0; outline: 0; padding: 14px 8px; font-family: var(--pxlt-body); font-size: 15px; background: transparent; color: var(--pxlt-ink); width: 100%; }
+.pxlt-cta__form button { background: var(--pxlt-ink); color: var(--pxlt-white); padding: 14px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; letter-spacing: 0.04em; transition: background .25s ease; }
+.pxlt-cta__form button:hover { background: var(--pxlt-red); }
+.pxlt-cta__note { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 12px; text-align: center; }
+
+/* ====================================================================
+   FOOTER & SEO KEYWORDS
+   ==================================================================== */
+.pxlt-footer { background: var(--pxlt-ink); color: var(--pxlt-white); padding: 80px 0 30px; }
+.pxlt-footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.pxlt-footer__about p { color: rgba(255,255,255,0.6); font-size: 14.5px; line-height: 1.65; margin: 20px 0; max-width: 36ch; }
+.pxlt-footer__socials { display: flex; gap: 10px; }
+.pxlt-footer__socials a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: background .25s ease, border-color .25s ease; }
+.pxlt-footer__socials a:hover { background: var(--pxlt-red); border-color: var(--pxlt-red); }
+.pxlt-footer__socials svg { width: 16px; height: 16px; }
+.pxlt-footer h5 { font-family: var(--pxlt-display); font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 22px; color: var(--pxlt-white); }
+.pxlt-footer ul { list-style: none; padding: 0; margin: 0; }
+.pxlt-footer ul li { margin-bottom: 12px; }
+.pxlt-footer ul a { color: rgba(255,255,255,0.65); font-size: 14.5px; transition: color .2s ease, padding-left .2s ease; }
+.pxlt-footer ul a:hover { color: var(--pxlt-red); padding-left: 6px; }
+.pxlt-footer__bottom { padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 14px; }
+.pxlt-footer__bottom .pxlt-logo { color: var(--pxlt-white); font-size: 18px; }
+.pxlt-seo-keywords { text-align: center; padding: 30px 0; font-size: 13px; color: var(--pxlt-muted); background: var(--pxlt-grey-2); }
+.pxlt-seo-keywords span { margin: 0 8px; color: var(--pxlt-muted); }
+.pxlt-seo-keywords span strong { color: var(--pxlt-ink); font-weight: 600; }
+
+/* ====================================================================
+   ANIMATIONS
+   ==================================================================== */
+@keyframes pxlt-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pxlt-reveal { animation: pxlt-fade-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.pxlt-reveal[data-delay="1"] { animation-delay: 0.1s; }
+.pxlt-reveal[data-delay="2"] { animation-delay: 0.2s; }
+.pxlt-reveal[data-delay="3"] { animation-delay: 0.3s; }
+.pxlt-reveal[data-delay="4"] { animation-delay: 0.4s; }
+
+/* ====================================================================
+   RESPONSIVE (TABLET & GENERAL MOBILE)
+   ==================================================================== */
+@media (max-width: 1024px) {
+  .pxlt-hero__grid, .pxlt-about__grid, .pxlt-services__head, .pxlt-process__head, .pxlt-why__team, .pxlt-cta__box {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pxlt-services__grid { grid-template-columns: repeat(2, 1fr); }
+  .pxlt-process__steps { grid-template-columns: repeat(2, 1fr); }
+  .pxlt-process__steps::before { display: none; }
+  .pxlt-work__grid { grid-template-columns: repeat(4, 1fr); }
+  .pxlt-case.span-3 { grid-column: span 4; }
+  .pxlt-case.span-2 { grid-column: span 2; }
+  .pxlt-testimonials__grid { grid-template-columns: 1fr; }
+  .pxlt-footer__grid { grid-template-columns: 1fr 1fr; }
+  .pxlt-why__team { padding: 40px 40px 0; }
+}
+
+@media (max-width: 720px) {
+  .pxlt-utility { display: none; } /* HIDDEN UTILITY BAR ON MOBILE */
+  .pxlt-nav__menu { display: none; }
+  .pxlt-nav__toggle { display: flex; }
+  .pxlt-services__grid, .pxlt-work__grid, .pxlt-process__steps { grid-template-columns: 1fr; }
+  .pxlt-case.span-3, .pxlt-case.span-2 { grid-column: span 1; }
+  .pxlt-footer__grid { grid-template-columns: 1fr; gap: 36px; }
+  .pxlt-about__collage { grid-template-rows: 180px 140px; }
+  .pxlt-hero__title { font-size: clamp(40px, 11vw, 80px); }
+  .pxlt-cta__form { flex-direction: column; padding: 12px; border-radius: 12px; gap: 10px; }
+  .pxlt-cta__form button { width: 100%; border-radius: 8px; }
+  .pxlt-hero__cta .pxlt-btn { width: 100%; justify-content: center; }
+  .pxlt-float-tag { left: 8px; }
+  .pxlt-why__stats { grid-template-columns: 1fr 1fr; gap: 16px; } 
+  .pxlt-stat { padding: 24px 16px; }
+  .pxlt-stat__n { font-size: 36px; }
+}
+
+/* ====================================================================
+   RESPONSIVE (IPHONE / SAMSUNG GALAXY NARROW SCREENS)
+   ==================================================================== */
+@media (max-width: 480px) {
+  .pxlt-container { padding: 0 16px; } 
+  
+  /* Adjust Hero Spacing & Meta Elements */
+  .pxlt-hero__meta { flex-direction: column; gap: 24px; border-top: none; padding-top: 16px; }
+  .pxlt-hero__badge { left: 10px; bottom: 10px; padding: 10px 14px; }
+  .pxlt-hero__badge strong { font-size: 18px; }
+  
+  /* Adjust Marquee for iPhone visibility */
+  .pxlt-marquee__item { font-size: 20px; gap: 30px; }
+  
+  /* Make image collages proportional */
+  .pxlt-about__collage { grid-template-rows: 140px 120px; }
+  
+  /* Stack stats for maximum readability */
+  .pxlt-why__stats { grid-template-columns: 1fr; } 
+  
+  /* Adjust Paddings for smaller viewports */
+  .pxlt-why__team { padding: 30px 20px 0; }
+  .pxlt-quote { padding: 24px 20px; }
+  .pxlt-cta__box { padding: 40px 20px; }
+  .pxlt-footer { padding: 50px 0 30px; }
+  
+  /* Full width buttons in CTA */
+  .pxlt-cta__actions { flex-direction: column; }
+  .pxlt-cta__actions .pxlt-btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="pxlt-home">
+
+  <div class="pxlt-utility">
+    <div class="pxlt-container">
+      <div class="pxlt-utility__row">
+        <div class="pxlt-utility__left">
+          <span>📍 123 Anywhere St., Any City</span>
+          <span>✉️ hello@pixlate.digital</span>
+          <span>📞 +91 00000 00000</span>
+        </div>
+        <div class="pxlt-utility__right">
+          <span>Award-winning creative agency <span class="dot">●</span> Trusted by <span class="pxlt-counter" data-target="210">0</span>+ brands</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="pxlt-nav">
+    <div class="pxlt-container">
+      <div class="pxlt-nav__row">
+        <a href="#" class="pxlt-logo" aria-label="Pixlate Digital home">
+          <span class="pxlt-logo__mark" aria-hidden="true"></span>
+          <span class="pxlt-logo__txt"><span>Pixlate</span><span>Digital</span></span>
+        </a>
+
+        <nav>
+          <ul class="pxlt-nav__menu" id="pxltMenu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#testimonials">Clients</a></li>
+            <li><a href="#contact" class="pxlt-btn pxlt-btn--primary" style="padding: 10px 20px; font-size: 14px; color: #fff;">
+              Start a Project
+              <span class="arrow">→</span>
+            </a></li>
+          </ul>
+        </nav>
+
+        <button class="pxlt-nav__toggle" aria-label="Toggle navigation" id="pxltToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="pxlt-hero">
+    <div class="pxlt-container">
+      <div class="pxlt-hero__grid">
+        <div>
+          <span class="pxlt-eyebrow pxlt-reveal">Best Content Marketing Agency</span>
+          <h1 class="pxlt-hero__title pxlt-reveal" data-delay="1">
+            <span class="script">Crafted</span>
+            Digital<br>Experience
+          </h1>
+          <p class="pxlt-hero__sub pxlt-reveal" data-delay="2">
+            Pixlate Digital is a <b>creative marketing agency</b> built for crafting engaging content,
+            social campaigns &amp; brand experiences that help businesses connect and stand out online.
+          </p>
+          <div class="pxlt-hero__cta pxlt-reveal" data-delay="3">
+            <a href="#contact" class="pxlt-btn pxlt-btn--primary">
+              Start Your Project
+              <span class="arrow">→</span>
+            </a>
+            <a href="#work" class="pxlt-btn pxlt-btn--ghost">
+              See Our Work
+            </a>
+          </div>
+
+          <div class="pxlt-hero__meta pxlt-reveal" data-delay="4">
+            <div class="pxlt-hero__meta-item">
+              <div class="n"><span class="pxlt-counter" data-target="6">0</span><sup>+</sup></div>
+              <div class="l">Years of excellence</div>
+            </div>
+            <div class="pxlt-hero__meta-item">
+              <div class="n"><span class="pxlt-counter" data-target="210">0</span><sup>+</sup></div>
+              <div class="l">Happy clients &amp; counting</div>
+            </div>
+            <div class="pxlt-hero__meta-item">
+              <div class="n"><span class="pxlt-counter" data-target="50">0</span>M<sup>+</sup></div>
+              <div class="l">Organic reach driven</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pxlt-hero__visual pxlt-reveal" data-delay="2">
+          <span class="pxlt-float-tag">Now Booking · Q4</span>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Pixlate Digital creative team illustration">
+          <div class="pxlt-hero__badge">
+            <strong>4.9 / 5.0</strong>
+            <span>Average client rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pxlt-marquee" aria-hidden="true">
+    <div class="pxlt-marquee__track">
+      <div class="pxlt-marquee__item">
+        <span>Content Marketing</span><span>✦</span>
+        <span>Social Media</span><span>✦</span>
+        <span>Performance Ads</span><span>✦</span>
+        <span>Branding</span><span>✦</span>
+        <span>SEO</span><span>✦</span>
+        <span>Short-Form Video</span><span>✦</span>
+        <span>Web Design</span><span>✦</span>
+      </div>
+      <div class="pxlt-marquee__item">
+        <span>Content Marketing</span><span>✦</span>
+        <span>Social Media</span><span>✦</span>
+        <span>Performance Ads</span><span>✦</span>
+        <span>Branding</span><span>✦</span>
+        <span>SEO</span><span>✦</span>
+        <span>Short-Form Video</span><span>✦</span>
+        <span>Web Design</span><span>✦</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="pxlt-about" id="about">
+    <div class="pxlt-container">
+      <div class="pxlt-about__grid">
+        <div>
+          <span class="pxlt-eyebrow">Pixlate Digital</span>
+          <h2 class="pxlt-h2 pxlt-about__title">
+            who <span class="we">we</span> are<span style="color: var(--pxlt-red)">?</span>
+          </h2>
+          <p class="pxlt-about__copy">
+            Pixlate Digital is a creative marketing agency built for
+            <b>crafting engaging content, social campaigns, and brand experiences</b>
+            that help businesses connect and stand out online.
+          </p>
+          <p class="pxlt-about__copy">
+            We help <b>businesses</b> grow through high-impact social media content,
+            short-form videos, performance marketing, SEO, branding, and digital storytelling.
+          </p>
+          <div class="pxlt-about__pills">
+            <span class="pxlt-pill">Strategic</span>
+            <span class="pxlt-pill">Cinematic</span>
+            <span class="pxlt-pill">Consistent</span>
+          </div>
+        </div>
+
+        <div class="pxlt-about__collage">
+          <div class="c1"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Pixlate designer working at studio"></div>
+          <div><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="Pixlate Digital business card"></div>
+          <div class="c-date">
+            <div class="big">11/08</div>
+            <div class="sm">123 Anywhere St., Any City</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pxlt-services" id="services">
+    <div class="pxlt-container">
+      <div class="pxlt-services__head">
+        <div>
+          <span class="pxlt-eyebrow">What we do</span>
+          <h2 class="pxlt-h2">Services built for <span style="color: var(--pxlt-red); font-family: var(--pxlt-script); font-style: italic;">growth</span></h2>
+        </div>
+        <p class="pxlt-lead">
+          From viral reels to full-stack performance campaigns — every service is designed to
+          capture attention, build trust, and turn audiences into customers.
+        </p>
+      </div>
+
+      <div class="pxlt-services__grid">
+        <article class="pxlt-service">
+          <div class="pxlt-service__num">01 / SERVICE</div>
+          <div class="pxlt-service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/><circle cx="20" cy="12" r="1.5" fill="currentColor"/></svg>
+          </div>
+          <h3>Content Marketing</h3>
+          <p>SEO-driven content that ranks and converts — blogs, articles, scripts, and editorial built for today's algorithms.</p>
+          <a href="#" class="pxlt-service__link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="pxlt-service">
+          <div class="pxlt-service__num">02 / SERVICE</div>
+          <div class="pxlt-service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </div>
+          <h3>Social Media Marketing</h3>
+          <p>End-to-end Instagram, LinkedIn, YouTube &amp; X strategy — posts, reels, community management, and growth.</p>
+          <a href="#" class="pxlt-service__link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="pxlt-service">
+          <div class="pxlt-service__num">03 / SERVICE</div>
+          <div class="pxlt-service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 8-9"/><path d="M14 7h7v7"/></svg>
+          </div>
+          <h3>Performance Marketing</h3>
+          <p>Meta, Google &amp; LinkedIn ads engineered for ROAS — landing pages, creatives, and full-funnel optimization.</p>
+          <a href="#" class="pxlt-service__link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="pxlt-service">
+          <div class="pxlt-service__num">04 / SERVICE</div>
+          <div class="pxlt-service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+          </div>
+          <h3>SEO Services</h3>
+          <p>Technical SEO, on-page, link-building &amp; local SEO — built to dominate search and bring qualified traffic.</p>
+          <a href="#" class="pxlt-service__link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="pxlt-service">
+          <div class="pxlt-service__num">05 / SERVICE</div>
+          <div class="pxlt-service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+          </div>
+          <h3>Short-Form Video &amp; Reels</h3>
+          <p>Hook-first reels, YouTube shorts &amp; TikToks shot, edited, and optimised for the scroll-stopping moment.</p>
+          <a href="#" class="pxlt-service__link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="pxlt-service">
+          <div class="pxlt-service__num">06 / SERVICE</div>
+          <div class="pxlt-service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2.5" fill="currentColor"/><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/></svg>
+          </div>
+          <h3>Branding &amp; Identity</h3>
+          <p>Logos, brand systems, guidelines &amp; visual languages that make brands instantly recognisable.</p>
+          <a href="#" class="pxlt-service__link">Learn more <span>→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pxlt-why">
+    <div class="pxlt-container">
+      <div class="pxlt-why__head">
+        <span class="pxlt-eyebrow">Why Pixlate</span>
+        <h2 class="pxlt-h2">Numbers we're <span style="font-family: var(--pxlt-script); color: var(--pxlt-red); font-style: italic;">proud of.</span></h2>
+        <p class="pxlt-lead">
+          At Pixlate Digital, we focus on creating content that feels relevant, engaging, and built
+          for today's digital audience. Every project is designed to capture attention and drive growth.
+        </p>
+      </div>
+
+      <div class="pxlt-why__stats">
+        <div class="pxlt-stat">
+          <div class="pxlt-stat__n"><span class="pxlt-counter" data-target="6">0</span><sup>+</sup></div>
+          <div class="pxlt-stat__l">Years of excellence in digital marketing</div>
+        </div>
+        <div class="pxlt-stat">
+          <div class="pxlt-stat__n"><span class="pxlt-counter" data-target="210">0</span><sup>+</sup></div>
+          <div class="pxlt-stat__l">Happy clients and counting across India</div>
+        </div>
+        <div class="pxlt-stat">
+          <div class="pxlt-stat__n"><span class="pxlt-counter" data-target="50">0</span>M<sup>+</sup></div>
+          <div class="pxlt-stat__l">Organic impressions delivered last year</div>
+        </div>
+        <div class="pxlt-stat">
+          <div class="pxlt-stat__n"><span class="pxlt-counter" data-target="98">0</span><sup>%</sup></div>
+          <div class="pxlt-stat__l">Client retention &amp; satisfaction rate</div>
+        </div>
+      </div>
+
+      <div class="pxlt-why__team">
+        <div class="pxlt-why__team-text">
+          <span class="pxlt-eyebrow">Our People</span>
+          <h3>A multidisciplinary team obsessed with craft.</h3>
+          <p>
+            Strategists, designers, editors, and growth marketers under one roof — collaborating on
+            every project to deliver work that doesn't just look good, but actually performs.
+          </p>
+          <a href="#contact" class="pxlt-btn pxlt-btn--primary">
+            Meet the Team
+            <span class="arrow">→</span>
+          </a>
+        </div>
+        <div class="pxlt-why__team-img">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=80" alt="Pixlate Digital cross-functional team illustration">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pxlt-process" id="process">
+    <div class="pxlt-container">
+      <div class="pxlt-process__head">
+        <div>
+          <span class="pxlt-eyebrow">How we work</span>
+          <h2 class="pxlt-h2">Our process, in 4 steps.</h2>
+        </div>
+        <p class="pxlt-lead">
+          A clear, collaborative system that turns rough briefs into refined campaigns —
+          with no guesswork and no missed deadlines.
+        </p>
+      </div>
+
+      <div class="pxlt-process__steps">
+        <div class="pxlt-step">
+          <div class="pxlt-step__num"><span>01</span></div>
+          <h4>Discover</h4>
+          <p>Kickoff calls, audit, competitor &amp; audience research — we get inside your brand.</p>
+        </div>
+        <div class="pxlt-step">
+          <div class="pxlt-step__num"><span>02</span></div>
+          <h4>Strategize</h4>
+          <p>Roadmaps, content pillars, ad funnels &amp; channel plans tailored to your goals.</p>
+        </div>
+        <div class="pxlt-step">
+          <div class="pxlt-step__num"><span>03</span></div>
+          <h4>Create</h4>
+          <p>Design, shoot, edit and ship — content that's on-brand, on-brief, on-trend.</p>
+        </div>
+        <div class="pxlt-step">
+          <div class="pxlt-step__num"><span>04</span></div>
+          <h4>Optimize</h4>
+          <p>Weekly reports, A/B tests, performance reviews &amp; relentless iteration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pxlt-work" id="work">
+    <div class="pxlt-container">
+      <div class="pxlt-work__head">
+        <div>
+          <span class="pxlt-eyebrow">Selected work</span>
+          <h2 class="pxlt-h2">Campaigns that <span style="font-family: var(--pxlt-script); color: var(--pxlt-red); font-style: italic;">moved</span> the needle.</h2>
+        </div>
+        <a href="#" class="pxlt-btn pxlt-btn--ghost">View All Case Studies <span class="arrow">→</span></a>
+      </div>
+
+      <div class="pxlt-work__grid">
+        <article class="pxlt-case span-3">
+          <img class="pxlt-case__bg" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80" alt="D2C brand reel series">
+          <div class="pxlt-case__overlay">
+            <div class="pxlt-case__tag">Short-Form Video</div>
+            <h3 class="pxlt-case__title">2.4M views in 30 days — D2C brand reel series</h3>
+          </div>
+        </article>
+        <article class="pxlt-case span-3 pxlt-case--ill" style="background: linear-gradient(135deg, #FFE0DD, #C22923);">
+          <img class="pxlt-case__bg" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="Brand identity for tech startup" style="object-position: center bottom;">
+          <div class="pxlt-case__overlay">
+            <div class="pxlt-case__tag">Branding</div>
+            <h3 class="pxlt-case__title">Full brand identity system for a B2B SaaS startup</h3>
+          </div>
+        </article>
+        <article class="pxlt-case span-2">
+          <img class="pxlt-case__bg" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Performance marketing case">
+          <div class="pxlt-case__overlay">
+            <div class="pxlt-case__tag">Performance Ads</div>
+            <h3 class="pxlt-case__title">5.8x ROAS on Meta Ads</h3>
+          </div>
+        </article>
+        <article class="pxlt-case span-2">
+          <img class="pxlt-case__bg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="SEO ranking case">
+          <div class="pxlt-case__overlay">
+            <div class="pxlt-case__tag">SEO</div>
+            <h3 class="pxlt-case__title">Page 1 rankings in 4 months</h3>
+          </div>
+        </article>
+        <article class="pxlt-case span-2">
+          <img class="pxlt-case__bg" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Social campaign case">
+          <div class="pxlt-case__overlay">
+            <div class="pxlt-case__tag">Social Campaign</div>
+            <h3 class="pxlt-case__title">Festive launch · 8.1M reach</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pxlt-testimonials" id="testimonials">
+    <div class="pxlt-container">
+      <div class="pxlt-testimonials__head">
+        <span class="pxlt-eyebrow" style="display: inline-flex;">Client Love</span>
+        <h2 class="pxlt-h2">Words from people we've worked with.</h2>
+      </div>
+
+      <div class="pxlt-testimonials__grid">
+
+        <div class="pxlt-quote">
+          <div class="pxlt-quote__mark">"</div>
+          <div class="pxlt-quote__stars">★★★★★</div>
+          <p class="pxlt-quote__text">
+            Pixlate took our brand from invisible to all over our customers' feeds.
+            Their content team is sharp, fast, and consistently on-brief.
+          </p>
+          <div class="pxlt-quote__author">
+            <div class="pxlt-quote__avatar" style="background: var(--pxlt-red);">AM</div>
+            <div>
+              <div class="pxlt-quote__name">Aanya Mehta</div>
+              <div class="pxlt-quote__role">Founder · Verde Skincare</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pxlt-quote">
+          <div class="pxlt-quote__mark">"</div>
+          <div class="pxlt-quote__stars">★★★★★</div>
+          <p class="pxlt-quote__text">
+            Honest reporting, sharp creative, and a team that actually picks up the phone.
+            They scaled our paid acquisition past 5x ROAS in one quarter.
+          </p>
+          <div class="pxlt-quote__author">
+            <div class="pxlt-quote__avatar" style="background: var(--pxlt-ink);">RS</div>
+            <div>
+              <div class="pxlt-quote__name">Rohan Singh</div>
+              <div class="pxlt-quote__role">CMO · NorthLane Apparel</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pxlt-quote">
+          <div class="pxlt-quote__mark">"</div>
+          <div class="pxlt-quote__stars">★★★★★</div>
+          <p class="pxlt-quote__text">
+            The best content marketing agency we've partnered with. Strategy, story,
+            and execution all under one roof — and the results speak for themselves.
+          </p>
+          <div class="pxlt-quote__author">
+            <div class="pxlt-quote__avatar" style="background: var(--pxlt-grey); color: var(--pxlt-ink);">PK</div>
+            <div>
+              <div class="pxlt-quote__name">Priya Kapoor</div>
+              <div class="pxlt-quote__role">Director · Halcyon Hotels</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="pxlt-seo-keywords" aria-label="Services we specialize in">
+    <span><strong>Best Content Marketing Agency</strong></span> ·
+    <span>Creative Marketing Agency</span> ·
+    <span>Social Media Marketing</span> ·
+    <span>Performance Marketing</span> ·
+    <span>SEO Services</span> ·
+    <span>Branding &amp; Identity</span> ·
+    <span>Short-Form Video Production</span> ·
+    <span>Digital Storytelling</span>
+  </div>
+
+  <section class="pxlt-cta" id="contact">
+    <div class="pxlt-container">
+      <div class="pxlt-cta__box">
+        <div>
+          <h2>Let's build something <em>unforgettable.</em></h2>
+          <p>
+            Tell us about your brand. We'll come back within 24 hours with ideas,
+            a rough timeline, and how we'd approach the work.
+          </p>
+          <div class="pxlt-cta__actions">
+            <a href="mailto:hello@pixlate.digital" class="pxlt-btn pxlt-btn--light">
+              hello@pixlate.digital
+              <span class="arrow">→</span>
+            </a>
+            <a href="tel:+910000000000" class="pxlt-btn pxlt-btn--ghost" style="border-color: rgba(255,255,255,0.4); color: white;">
+              +91 00000 00000
+            </a>
+          </div>
+        </div>
+        <div class="pxlt-cta__right">
+          <form class="pxlt-cta__form" onsubmit="event.preventDefault(); alert('Thanks! Wire this to your WP form plugin (CF7/WPForms/Fluent).');">
+            <input type="email" placeholder="Your email address" required aria-label="Your email">
+            <button type="submit">Get a Quote</button>
+          </form>
+          <div class="pxlt-cta__note">No spam · Reply within 24 hours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pxlt-footer">
+    <div class="pxlt-container">
+      <div class="pxlt-footer__grid">
+
+        <div class="pxlt-footer__about">
+          <a href="#" class="pxlt-logo" style="color: white;">
+            <span class="pxlt-logo__mark"></span>
+            <span class="pxlt-logo__txt"><span style="color: white;">Pixlate</span><span style="color: rgba(255,255,255,0.6);">Digital</span></span>
+          </a>
+          <p>
+            A creative marketing agency crafting engaging content, social campaigns
+            &amp; brand experiences for businesses ready to grow online.
+          </p>
+          <div class="pxlt-footer__socials">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v16H4zM6 2.5a2 2 0 110 4 2 2 0 010-4zM10 8h4v2c.6-1.2 2.1-2.3 4.3-2.3 4.6 0 5.7 2.6 5.7 6V20h-4v-5c0-1.7-.6-3-2.4-3-2 0-3 1.3-3 3.4V20h-4z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 7.2s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4.1-1.2.1-1.9.9-.6.6-.8 2-.8 2S2.3 8.9 2.3 10.6v1.6c0 1.7.2 3.4.2 3.4s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.6.2 6.6.2s4 0 6.8-.3c.4-.1 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.7.2-3.4v-1.6c0-1.7-.2-3.3-.2-3.3zM10 14.4V7.6l5.2 3.4z"/></svg>
+            </a>
+            <a href="#" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.6L4.5 21H1.5l7.5-8.6L1 3h6.5l4.5 6zM16.4 19h1.6L7.7 5H6z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#">Content Marketing</a></li>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Performance Ads</a></li>
+            <li><a href="#">SEO Services</a></li>
+            <li><a href="#">Short-Form Video</a></li>
+            <li><a href="#">Branding</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Visit Us</h5>
+          <ul>
+            <li style="color: rgba(255,255,255,0.65);">123 Anywhere St.<br>Any City, India</li>
+            <li><a href="mailto:hello@pixlate.digital">hello@pixlate.digital</a></li>
+            <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li style="color: rgba(255,255,255,0.65); margin-top: 14px;">Mon – Sat · 10am to 7pm</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pxlt-footer__bottom">
+        <div>© <span id="pxltYear">2025</span> Pixlate Digital. All rights reserved.</div>
+        <div>
+          <a href="#" style="margin-right: 22px;">Privacy</a>
+          <a href="#" style="margin-right: 22px;">Terms</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>
+  // Mobile nav toggle and auto year functionality
+  (function () {
+    var t = document.getElementById('pxltToggle');
+    var m = document.getElementById('pxltMenu');
+    
+    if (t && m) {
+      t.addEventListener('click', function () {
+        if (m.style.display === 'flex') {
+          m.style.display = 'none';
+        } else {
+          // Dynamic calculation based on exact header height for mobile devices
+          var headerHeight = t.closest('.pxlt-nav').offsetHeight;
+          m.style.display = 'flex';
+          m.style.flexDirection = 'column';
+          m.style.position = 'absolute';
+          m.style.top = headerHeight + 'px'; 
+          m.style.left = '0';
+          m.style.right = '0';
+          m.style.background = 'rgba(255,255,255,0.98)';
+          m.style.padding = '20px 24px';
+          m.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+          m.style.gap = '16px';
+        }
+      });
+    }
+    
+    var y = document.getElementById('pxltYear');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Scroll Counter Animation
+    const counters = document.querySelectorAll('.pxlt-counter');
+    const speed = 100;
+
+    const animateCounters = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const inc = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(() => animateCounters(counter), 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5 
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters(entry.target);
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+
+  })();
+</script>
+
+</body>
+</html>
