@@ -18,12 +18,11 @@
 <style>
 /* ====================================================================
    PIXLATE DIGITAL — Front Page
-   All styles scoped under .pxlt-home to avoid clashing with WP themes.
    ==================================================================== */
 
 .pxlt-home {
   /* ---- Brand tokens ---- */
-  --pxlt-red: #F73B33;
+  --pxlt-red: #ED3224; /* Updated to match logo red */
   --pxlt-red-deep: #C22923;
   --pxlt-red-soft: #FFE7E5;
   --pxlt-grey: #CCCCCC;
@@ -42,7 +41,7 @@
   /* ---- Spacing ---- */
   --pxlt-section-y: clamp(64px, 9vw, 130px);
   --pxlt-container: 1240px;
-  --pxlt-radius: 6px;
+  --pxlt-radius: 0px; /* Changed to 0 for sharp, boxy look */
 
   font-family: var(--pxlt-body);
   color: var(--pxlt-ink);
@@ -78,7 +77,7 @@
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.01em;
-  border-radius: var(--pxlt-radius);
+  border-radius: var(--pxlt-radius); /* Now 0px */
   transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
   white-space: nowrap;
 }
@@ -104,7 +103,7 @@
   background: var(--pxlt-white);
   color: var(--pxlt-ink);
 }
-.pxlt-btn--light:hover { background: var(--pxlt-red); color: var(--pxlt-white); }
+.pxlt-btn--light:hover { background: var(--pxlt-ink); color: var(--pxlt-white); } /* Changed hover to ink for better contrast on red bg */
 
 .pxlt-btn .arrow { transition: transform .25s ease; }
 .pxlt-btn:hover .arrow { transform: translateX(4px); }
@@ -344,7 +343,7 @@
   position: relative;
   aspect-ratio: 4 / 5;
   background: var(--pxlt-grey-2);
-  border-radius: 8px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   overflow: hidden;
 }
 .pxlt-hero__visual img {
@@ -377,7 +376,7 @@
   left: 22px;
   background: var(--pxlt-white);
   padding: 14px 18px;
-  border-radius: var(--pxlt-radius);
+  border-radius: var(--pxlt-radius); /* Now 0px */
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   z-index: 4;
   font-size: 13px;
@@ -403,7 +402,7 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 8px 14px;
-  border-radius: 20px;
+  border-radius: var(--pxlt-radius); /* Boxy tag */
   z-index: 5;
   display: flex;
   align-items: center;
@@ -413,7 +412,8 @@
   content: "";
   width: 8px; height: 8px;
   background: var(--pxlt-red);
-  border-radius: 50%;
+  /* Removed border-radius to make the dot boxy too, if desired, otherwise keep 50% */
+  border-radius: 0; 
   animation: pxlt-pulse 1.6s ease-in-out infinite;
 }
 @keyframes pxlt-pulse {
@@ -484,7 +484,7 @@
   gap: 8px;
   padding: 8px 16px;
   border: 1.5px solid var(--pxlt-ink);
-  border-radius: 30px;
+  border-radius: var(--pxlt-radius); /* Boxy pills */
   font-size: 14px;
   font-weight: 600;
 }
@@ -502,7 +502,7 @@
   gap: 16px;
 }
 .pxlt-about__collage > div {
-  border-radius: 8px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   overflow: hidden;
   position: relative;
 }
@@ -576,13 +576,13 @@
   padding: 36px 28px 32px;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   transition: transform .35s ease, background .35s ease, border-color .35s ease;
   overflow: hidden;
 }
 .pxlt-service:hover {
   transform: translateY(-6px);
-  background: rgba(247,59,51,0.08);
+  background: rgba(237,50,36,0.08); /* Adjusted to match logo red rgba */
   border-color: var(--pxlt-red);
 }
 .pxlt-service__num {
@@ -600,7 +600,7 @@
   justify-content: center;
   background: var(--pxlt-red);
   color: var(--pxlt-white);
-  border-radius: 8px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   margin-bottom: 22px;
 }
 .pxlt-service__icon svg { width: 28px; height: 28px; }
@@ -653,7 +653,7 @@
 .pxlt-stat {
   padding: 36px 28px;
   background: var(--pxlt-grey-2);
-  border-radius: 10px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   position: relative;
   overflow: hidden;
   transition: background .3s ease;
@@ -680,7 +680,7 @@
 
 .pxlt-why__team {
   background: var(--pxlt-grey-2);
-  border-radius: 12px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   padding: 50px 50px 0;
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -700,14 +700,15 @@
 }
 .pxlt-why__team-text p { color: var(--pxlt-muted); margin-bottom: 22px; }
 .pxlt-why__team-img { align-self: end; }
-.pxlt-why__team-img img { width: 100%; height: auto; display: block; border-top-left-radius: 12px; border-top-right-radius: 12px; }
+.pxlt-why__team-img img { width: 100%; height: auto; display: block; } /* Removed border-radius */
 
 /* ====================================================================
    PROCESS
    ==================================================================== */
 .pxlt-process {
   padding: var(--pxlt-section-y) 0;
-  background: var(--pxlt-grey-2);
+  background: var(--pxlt-red); /* Updated background to match logo red */
+  color: var(--pxlt-white); /* Changed text color to white for visibility */
   position: relative;
 }
 .pxlt-process__head {
@@ -717,6 +718,11 @@
   align-items: end;
   margin-bottom: 56px;
 }
+.pxlt-process .pxlt-eyebrow { color: rgba(255,255,255,0.8); } /* Lighter eyebrow text */
+.pxlt-process .pxlt-eyebrow::before { background: var(--pxlt-white); } /* White eyebrow dot */
+.pxlt-process .pxlt-h2 { color: var(--pxlt-white); }
+.pxlt-process .pxlt-lead { color: rgba(255,255,255,0.9); }
+
 .pxlt-process__steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -730,16 +736,16 @@
   left: 5%;
   right: 5%;
   height: 2px;
-  background-image: linear-gradient(to right, var(--pxlt-red) 50%, transparent 50%);
+  background-image: linear-gradient(to right, rgba(255,255,255,0.5) 50%, transparent 50%); /* White dashed line */
   background-size: 12px 2px;
   z-index: 0;
 }
 .pxlt-step { position: relative; z-index: 1; }
 .pxlt-step__num {
   width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--pxlt-white);
-  border: 2px solid var(--pxlt-ink);
+  border-radius: var(--pxlt-radius); /* Boxy shape instead of circle */
+  background: var(--pxlt-red); /* Keep background red */
+  border: 2px solid var(--pxlt-white); /* White border */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -748,21 +754,22 @@
   font-size: 22px;
   margin-bottom: 20px;
   position: relative;
+  color: var(--pxlt-white); /* Text white initially */
 }
 .pxlt-step__num::after {
   content: "";
   position: absolute;
   inset: 4px;
-  border-radius: 50%;
-  background: var(--pxlt-red);
+  border-radius: var(--pxlt-radius); /* Boxy shape */
+  background: var(--pxlt-white); /* White fill on hover */
   opacity: 0;
   transition: opacity .3s ease;
 }
 .pxlt-step__num span { position: relative; z-index: 2; transition: color .3s ease; }
 .pxlt-step:hover .pxlt-step__num::after { opacity: 1; }
-.pxlt-step:hover .pxlt-step__num span { color: var(--pxlt-white); }
-.pxlt-step h4 { font-family: var(--pxlt-display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 10px; }
-.pxlt-step p { font-size: 14.5px; color: var(--pxlt-muted); margin: 0; line-height: 1.6; }
+.pxlt-step:hover .pxlt-step__num span { color: var(--pxlt-red); } /* Text becomes red on hover */
+.pxlt-step h4 { font-family: var(--pxlt-display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 10px; color: var(--pxlt-white); }
+.pxlt-step p { font-size: 14.5px; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.6; }
 
 /* ====================================================================
    WORK / PORTFOLIO
@@ -785,7 +792,7 @@
   gap: 20px;
 }
 .pxlt-case {
-  border-radius: 10px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   overflow: hidden;
   position: relative;
   aspect-ratio: 4 / 5;
@@ -835,7 +842,7 @@
 }
 .pxlt-quote {
   background: var(--pxlt-white);
-  border-radius: 10px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   padding: 36px 30px;
   position: relative;
   transition: transform .3s ease, box-shadow .3s ease;
@@ -844,7 +851,7 @@
 .pxlt-quote__mark { font-family: var(--pxlt-display); font-size: 64px; line-height: 0.3; color: var(--pxlt-red); font-weight: 700; height: 32px; margin-bottom: 18px; }
 .pxlt-quote__text { font-size: 16px; color: var(--pxlt-ink-2); margin-bottom: 24px; line-height: 1.65; }
 .pxlt-quote__author { display: flex; align-items: center; gap: 14px; }
-.pxlt-quote__avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--pxlt-grey); display: flex; align-items: center; justify-content: center; font-family: var(--pxlt-display); font-weight: 700; color: var(--pxlt-white); }
+.pxlt-quote__avatar { width: 48px; height: 48px; border-radius: var(--pxlt-radius); /* Boxy avatar */ background: var(--pxlt-grey); display: flex; align-items: center; justify-content: center; font-family: var(--pxlt-display); font-weight: 700; color: var(--pxlt-white); }
 .pxlt-quote__name { font-weight: 700; font-size: 15px; }
 .pxlt-quote__role { font-size: 13px; color: var(--pxlt-muted); }
 .pxlt-quote__stars { display: inline-flex; gap: 2px; margin-bottom: 14px; color: var(--pxlt-red); }
@@ -860,7 +867,7 @@
   background: var(--pxlt-ink);
   color: var(--pxlt-white);
   padding: clamp(50px, 7vw, 90px) clamp(30px, 5vw, 80px);
-  border-radius: 14px;
+  border-radius: var(--pxlt-radius); /* Now 0px */
   position: relative;
   overflow: hidden;
   display: grid;
@@ -875,9 +882,9 @@
 .pxlt-cta__box p { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 48ch; position: relative; z-index: 2; }
 .pxlt-cta__actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 2; }
 .pxlt-cta__right { position: relative; z-index: 2; }
-.pxlt-cta__form { background: var(--pxlt-white); padding: 8px 8px 8px 22px; border-radius: 50px; display: flex; align-items: center; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+.pxlt-cta__form { background: var(--pxlt-white); padding: 8px 8px 8px 22px; border-radius: var(--pxlt-radius); /* Boxy form */ display: flex; align-items: center; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
 .pxlt-cta__form input { flex: 1; border: 0; outline: 0; padding: 14px 8px; font-family: var(--pxlt-body); font-size: 15px; background: transparent; color: var(--pxlt-ink); width: 100%; }
-.pxlt-cta__form button { background: var(--pxlt-ink); color: var(--pxlt-white); padding: 14px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; letter-spacing: 0.04em; transition: background .25s ease; }
+.pxlt-cta__form button { background: var(--pxlt-ink); color: var(--pxlt-white); padding: 14px 22px; border-radius: var(--pxlt-radius); /* Boxy button */ font-weight: 600; font-size: 14px; letter-spacing: 0.04em; transition: background .25s ease; }
 .pxlt-cta__form button:hover { background: var(--pxlt-red); }
 .pxlt-cta__note { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 12px; text-align: center; }
 
@@ -888,7 +895,7 @@
 .pxlt-footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .pxlt-footer__about p { color: rgba(255,255,255,0.6); font-size: 14.5px; line-height: 1.65; margin: 20px 0; max-width: 36ch; }
 .pxlt-footer__socials { display: flex; gap: 10px; }
-.pxlt-footer__socials a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: background .25s ease, border-color .25s ease; }
+.pxlt-footer__socials a { width: 38px; height: 38px; border-radius: var(--pxlt-radius); /* Boxy social icons */ border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: background .25s ease, border-color .25s ease; }
 .pxlt-footer__socials a:hover { background: var(--pxlt-red); border-color: var(--pxlt-red); }
 .pxlt-footer__socials svg { width: 16px; height: 16px; }
 .pxlt-footer h5 { font-family: var(--pxlt-display); font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 22px; color: var(--pxlt-white); }
@@ -935,7 +942,7 @@
 }
 
 @media (max-width: 720px) {
-  .pxlt-utility { display: none; } /* HIDDEN UTILITY BAR ON MOBILE */
+  .pxlt-utility { display: none; }
   .pxlt-nav__menu { display: none; }
   .pxlt-nav__toggle { display: flex; }
   .pxlt-services__grid, .pxlt-work__grid, .pxlt-process__steps { grid-template-columns: 1fr; }
@@ -943,8 +950,8 @@
   .pxlt-footer__grid { grid-template-columns: 1fr; gap: 36px; }
   .pxlt-about__collage { grid-template-rows: 180px 140px; }
   .pxlt-hero__title { font-size: clamp(40px, 11vw, 80px); }
-  .pxlt-cta__form { flex-direction: column; padding: 12px; border-radius: 12px; gap: 10px; }
-  .pxlt-cta__form button { width: 100%; border-radius: 8px; }
+  .pxlt-cta__form { flex-direction: column; padding: 12px; border-radius: 0px; gap: 10px; }
+  .pxlt-cta__form button { width: 100%; border-radius: 0px; }
   .pxlt-hero__cta .pxlt-btn { width: 100%; justify-content: center; }
   .pxlt-float-tag { left: 8px; }
   .pxlt-why__stats { grid-template-columns: 1fr 1fr; gap: 16px; } 
@@ -958,27 +965,21 @@
 @media (max-width: 480px) {
   .pxlt-container { padding: 0 16px; } 
   
-  /* Adjust Hero Spacing & Meta Elements */
   .pxlt-hero__meta { flex-direction: column; gap: 24px; border-top: none; padding-top: 16px; }
   .pxlt-hero__badge { left: 10px; bottom: 10px; padding: 10px 14px; }
   .pxlt-hero__badge strong { font-size: 18px; }
   
-  /* Adjust Marquee for iPhone visibility */
   .pxlt-marquee__item { font-size: 20px; gap: 30px; }
   
-  /* Make image collages proportional */
   .pxlt-about__collage { grid-template-rows: 140px 120px; }
   
-  /* Stack stats for maximum readability */
   .pxlt-why__stats { grid-template-columns: 1fr; } 
   
-  /* Adjust Paddings for smaller viewports */
   .pxlt-why__team { padding: 30px 20px 0; }
   .pxlt-quote { padding: 24px 20px; }
   .pxlt-cta__box { padding: 40px 20px; }
   .pxlt-footer { padding: 50px 0 30px; }
   
-  /* Full width buttons in CTA */
   .pxlt-cta__actions { flex-direction: column; }
   .pxlt-cta__actions .pxlt-btn { width: 100%; justify-content: center; }
 }
@@ -992,9 +993,10 @@
     <div class="pxlt-container">
       <div class="pxlt-utility__row">
         <div class="pxlt-utility__left">
-          <span>📍 123 Anywhere St., Any City</span>
-          <span>✉️ hello@pixlate.digital</span>
-          <span>📞 +91 00000 00000</span>
+          <span style="display:inline-flex; align-items:center; gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            reach@pixlate.digital
+          </span>
         </div>
         <div class="pxlt-utility__right">
           <span>Award-winning creative agency <span class="dot">●</span> Trusted by <span class="pxlt-counter" data-target="210">0</span>+ brands</span>
@@ -1135,7 +1137,7 @@
           <div><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="Pixlate Digital business card"></div>
           <div class="c-date">
             <div class="big">11/08</div>
-            <div class="sm">123 Anywhere St., Any City</div>
+            <div class="sm">Udyog Vihar Phase IV, Gurugram, Haryana 122008, India</div>
           </div>
         </div>
       </div>
@@ -1169,7 +1171,7 @@
         <article class="pxlt-service">
           <div class="pxlt-service__num">02 / SERVICE</div>
           <div class="pxlt-service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="0"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           </div>
           <h3>Social Media Marketing</h3>
           <p>End-to-end Instagram, LinkedIn, YouTube &amp; X strategy — posts, reels, community management, and growth.</p>
@@ -1199,7 +1201,7 @@
         <article class="pxlt-service">
           <div class="pxlt-service__num">05 / SERVICE</div>
           <div class="pxlt-service__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/><rect x="3" y="5" width="18" height="14" rx="0"/></svg>
           </div>
           <h3>Short-Form Video &amp; Reels</h3>
           <p>Hook-first reels, YouTube shorts &amp; TikToks shot, edited, and optimised for the scroll-stopping moment.</p>
@@ -1311,9 +1313,7 @@
     <div class="pxlt-container">
       <div class="pxlt-work__head">
         <div>
-          <span class="pxlt-eyebrow">Selected work</span>
-          <h2 class="pxlt-h2">Campaigns that <span style="font-family: var(--pxlt-script); color: var(--pxlt-red); font-style: italic;">moved</span> the needle.</h2>
-        </div>
+          <span class="pxlt-eyebrow" style="color: var(--pxlt-muted);">Selected work</span> <h2 class="pxlt-h2" style="color: var(--pxlt-ink);">Campaigns that <span style="font-family: var(--pxlt-script); color: var(--pxlt-red); font-style: italic;">moved</span> the needle.</h2> </div>
         <a href="#" class="pxlt-btn pxlt-btn--ghost">View All Case Studies <span class="arrow">→</span></a>
       </div>
 
@@ -1439,12 +1439,9 @@
             a rough timeline, and how we'd approach the work.
           </p>
           <div class="pxlt-cta__actions">
-            <a href="mailto:hello@pixlate.digital" class="pxlt-btn pxlt-btn--light">
-              hello@pixlate.digital
+            <a href="mailto:reach@pixlate.digital" class="pxlt-btn pxlt-btn--light">
+              reach@pixlate.digital
               <span class="arrow">→</span>
-            </a>
-            <a href="tel:+910000000000" class="pxlt-btn pxlt-btn--ghost" style="border-color: rgba(255,255,255,0.4); color: white;">
-              +91 00000 00000
             </a>
           </div>
         </div>
@@ -1474,7 +1471,7 @@
           </p>
           <div class="pxlt-footer__socials">
             <a href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="0"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </a>
             <a href="#" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v16H4zM6 2.5a2 2 0 110 4 2 2 0 010-4zM10 8h4v2c.6-1.2 2.1-2.3 4.3-2.3 4.6 0 5.7 2.6 5.7 6V20h-4v-5c0-1.7-.6-3-2.4-3-2 0-3 1.3-3 3.4V20h-4z"/></svg>
@@ -1486,6 +1483,7 @@
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.6L4.5 21H1.5l7.5-8.6L1 3h6.5l4.5 6zM16.4 19h1.6L7.7 5H6z"/></svg>
             </a>
           </div>
+          <p style="margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.45);">In partnership with BreakingAd Technologies.</p>
         </div>
 
         <div>
@@ -1515,9 +1513,8 @@
         <div>
           <h5>Visit Us</h5>
           <ul>
-            <li style="color: rgba(255,255,255,0.65);">123 Anywhere St.<br>Any City, India</li>
-            <li><a href="mailto:hello@pixlate.digital">hello@pixlate.digital</a></li>
-            <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li style="color: rgba(255,255,255,0.65);">Udyog Vihar Phase IV,<br>Gurugram, Haryana 122008, India</li>
+            <li><a href="mailto:reach@pixlate.digital">reach@pixlate.digital</a></li>
             <li style="color: rgba(255,255,255,0.65); margin-top: 14px;">Mon – Sat · 10am to 7pm</li>
           </ul>
         </div>
@@ -1547,7 +1544,6 @@
         if (m.style.display === 'flex') {
           m.style.display = 'none';
         } else {
-          // Dynamic calculation based on exact header height for mobile devices
           var headerHeight = t.closest('.pxlt-nav').offsetHeight;
           m.style.display = 'flex';
           m.style.flexDirection = 'column';
