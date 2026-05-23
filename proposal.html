@@ -1,718 +1,1399 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixlate × Fortis Mohali — Focused Pitch</title>
 
-<style>
-/* ==============================================================
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixlate × Fortis Mohali — Focused Pitch</title>
+
+  <style>
+    /* ==============================================================
    FONTS — bundled locally so the PDF renders without network.
    ============================================================== */
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('fonts/neue-400.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('fonts/neue-500.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('fonts/neue-700.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Handsome';
-  src: url('fonts/handsome-400.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('fonts/neue-400.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
 
-/* ==============================================================
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('fonts/neue-500.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('fonts/neue-700.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Handsome';
+      src: url('fonts/handsome-400.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ==============================================================
    PIXLATE DIGITAL × FORTIS HOSPITAL MOHALI
    ============================================================== */
 
-:root{
-  /* Exact Theme Colors Provided */
-  --red: #fa3737; 
-  --red-deep: #d12c2c;
-  --red-soft: #FFEDED;
-  --grey: #c8c8c8;
-  --grey-2: #F5F5F5;
-  --grey-3: #E8E8E8;
-  --ink: #222222; 
-  --ink-2: #333333; 
-  --muted: #5C5C5C;
-  --white: #FFFFFF;
-  --display: 'Neue Montreal', system-ui, sans-serif;
-  --script: 'Handsome', 'Allura', cursive;
-  --body: 'Neue Montreal', system-ui, sans-serif;
-}
+    :root {
+      /* ==============================================================
+         COVER IMAGE — adjust these to reposition / resize the image
+         on page 1 without touching anything else.
+         ============================================================== */
+      --img-top: 50%;
+      /* distance from the top of the page   */
+      --img-opacity: 0.92;
+      /* 0 = invisible, 1 = fully opaque      */
+      --img-radius: 10px 0 0 10px;
+      /* border-radius (corners)          */
+      --img-width: 100%;
+      --img-height: auto;
+      --img-scale: 0.5;
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      /* ==============================================================
+         COLLAB LOGO STRIP — adjust to reposition the logos badge
+         ============================================================== */
+      --logo-top: 52%;
+      /* vertical position on the page        */
+      --logo-left: 14mm;
+      /* distance from the left edge          */
 
-html, body {
-  background: #d0d0d0;
-  font-family: var(--body);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+      /* Exact Theme Colors Provided */
+      --red: #fa3737;
+      --red-deep: #d12c2c;
+      --red-soft: #FFEDED;
+      --grey: #c8c8c8;
+      --grey-2: #F5F5F5;
+      --grey-3: #E8E8E8;
+      --ink: #222222;
+      --ink-2: #333333;
+      --muted: #5C5C5C;
+      --white: #FFFFFF;
+      --display: 'Neue Montreal', system-ui, sans-serif;
+      --script: 'Handsome', 'Allura', cursive;
+      --body: 'Neue Montreal', system-ui, sans-serif;
+    }
 
-/* ---- PAGE LAYOUT ---- */
-@page {
-  size: A4 portrait;
-  margin: 0;
-}
-.page {
-  width: 210mm;
-  height: 297mm;
-  background: var(--white);
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  page-break-after: always;
-  break-after: page;
-}
-.page + .page { margin-top: 12mm; }
-.page:last-child { page-break-after: auto; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-@media screen {
-  html, body { background: #d0d0d0; }
-  .page { margin: 12mm auto; box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-  .page + .page { margin-top: 12mm; }
-}
+    html,
+    body {
+      background: #d0d0d0;
+      font-family: var(--body);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-@media print {
-  html, body { background: white; }
-  .page {
-    margin: 0 !important;
-    box-shadow: none !important;
-    width: 210mm;
-    height: 297mm;
-  }
-  .page + .page { margin-top: 0 !important; }
-}
+    /* ---- PAGE LAYOUT ---- */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
 
-/* ---- COMMON PAGE FURNITURE ---- */
-.brand-mark {
-  position: absolute;
-  top: 14mm;
-  right: 14mm;
-  width: 32px;
-  height: 32px;
-  z-index: 10;
-}
-.brand-mark::before, .brand-mark::after {
-  content: ""; position: absolute; width: 20px; height: 20px;
-}
-.brand-mark::before { background: var(--red); top: 0; left: 0; z-index: 2; }
-.brand-mark::after  { background: var(--grey); bottom: 0; right: 0; z-index: 1; }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: var(--white);
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
 
-.page-eyebrow {
-  position: absolute;
-  top: 14mm;
-  left: 14mm;
-  font-size: 9pt;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: var(--ink);
-  text-transform: uppercase;
-}
+    .page+.page {
+      margin-top: 12mm;
+    }
 
-.page-no {
-  position: absolute;
-  bottom: 10mm;
-  right: 14mm;
-  font-size: 9pt;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  font-weight: 500;
-}
-.page-foot {
-  position: absolute;
-  bottom: 10mm;
-  left: 14mm;
-  font-size: 9pt;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
+    .page:last-child {
+      page-break-after: auto;
+    }
 
-.page-body {
-  padding: 30mm 18mm 22mm;
-  height: 100%;
-  position: relative;
-  z-index: 2;
-}
+    @media screen {
 
-/* ---- TYPE PRIMITIVES ---- */
-.dot-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 8.5pt;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink);
-}
-.dot-eyebrow::before {
-  content: "";
-  width: 8px; height: 8px;
-  background: var(--red);
-  display: inline-block;
-}
+      html,
+      body {
+        background: #d0d0d0;
+      }
 
-/* ============================================================
+      .page {
+        margin: 12mm auto;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .page+.page {
+        margin-top: 12mm;
+      }
+    }
+
+    @media print {
+
+      html,
+      body {
+        background: white;
+      }
+
+      .page {
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 210mm;
+        height: 297mm;
+      }
+
+      .page+.page {
+        margin-top: 0 !important;
+      }
+    }
+
+    /* ---- COMMON PAGE FURNITURE ---- */
+    .brand-mark {
+      position: absolute;
+      top: 14mm;
+      right: 14mm;
+      width: 32px;
+      height: 32px;
+      z-index: 10;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+    }
+
+    .brand-mark::before {
+      background: var(--red);
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .brand-mark::after {
+      background: var(--grey);
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .page-eyebrow {
+      position: absolute;
+      top: 14mm;
+      left: 14mm;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+
+    .page-no {
+      position: absolute;
+      bottom: 10mm;
+      right: 14mm;
+      font-size: 9pt;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+
+    .page-foot {
+      position: absolute;
+      bottom: 10mm;
+      left: 14mm;
+      font-size: 9pt;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .page-body {
+      padding: 30mm 18mm 22mm;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---- TYPE PRIMITIVES ---- */
+    .dot-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 8.5pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .dot-eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      display: inline-block;
+    }
+
+    /* ============================================================
    PAGE 1 (01) — ABOUT FORTIS CURRENT
    ============================================================ */
-.fortis-headline {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 40pt;
-  line-height: 0.96;
-  letter-spacing: -0.03em;
-  margin-bottom: 4mm;
-}
-.fortis-headline .red { color: var(--red); }
-.fortis-lead {
-  font-size: 10.5pt;
-  line-height: 1.55;
-  color: var(--muted);
-  max-width: 85%;
-  margin-bottom: 8mm;
-}
-.fortis-stat-row { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 4mm; margin-bottom: 6mm; }
-.fortis-card { padding: 5mm; background: var(--grey-2); border-radius: 5px; border-top: 3px solid var(--red); }
-.fortis-card.dark { background: var(--ink); color: white; border-top-color: var(--red); }
-.fortis-card.red { background: var(--red); color: white; border-top-color: var(--red-deep); }
-.fortis-card .label { font-size: 7.5pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 3mm; }
-.fortis-card.dark .label { color: rgba(255,255,255,0.6); }
-.fortis-card.red .label { color: rgba(255,255,255,0.85); }
-.fortis-card .n { font-family: var(--display); font-weight: 700; font-size: 32pt; line-height: 1; letter-spacing: -0.025em; }
-.fortis-card .desc { font-size: 9pt; color: var(--muted); margin-top: 3mm; line-height: 1.4; }
-.fortis-card.dark .desc { color: rgba(255,255,255,0.7); }
-.fortis-card.red .desc { color: rgba(255,255,255,0.9); }
+    .fortis-headline {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 40pt;
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+      margin-bottom: 4mm;
+    }
 
-.benchmark-table { margin-top: 4mm; padding: 6mm; background: var(--grey-2); color: var(--ink); border-radius: 6px; }
-.benchmark-table .ttl { font-family: var(--display); font-size: 14pt; font-weight: 700; margin-bottom: 4mm; }
-.benchmark-rows { display: grid; gap: 2mm; }
-.benchmark-row { display: grid; grid-template-columns: auto 1fr auto; gap: 4mm; align-items: center; padding: 3mm 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 9pt; }
-.benchmark-row:last-child { border-bottom: 0; }
-.benchmark-row.you { background: rgba(250,55,55,0.08); padding: 3mm 4mm; border-radius: 3px; border: 1px solid rgba(250,55,55,0.25); margin: 1mm 0; }
-.benchmark-row .hosp { font-weight: 600; }
-.benchmark-row .bar { position: relative; height: 8px; background: rgba(0,0,0,0.06); border-radius: 4px; overflow: hidden; display: block; }
-.benchmark-row .bar .fill { display: block; height: 100%; background: var(--red); border-radius: 4px; }
-.benchmark-row .num { font-family: var(--display); font-weight: 700; font-size: 11pt; min-width: 24mm; text-align: right; }
-.benchmark-row.you .num { color: var(--red); }
-.note { margin-top: 4mm; font-size: 8pt; color: var(--muted); font-style: italic; }
+    .fortis-headline .red {
+      color: var(--red);
+    }
 
-/* ============================================================
+    .fortis-lead {
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 85%;
+      margin-bottom: 8mm;
+    }
+
+    .fortis-stat-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+
+    .fortis-card {
+      padding: 5mm;
+      background: var(--grey-2);
+      border-radius: 5px;
+      border-top: 3px solid var(--red);
+    }
+
+    .fortis-card.dark {
+      background: var(--ink);
+      color: white;
+      border-top-color: var(--red);
+    }
+
+    .fortis-card.red {
+      background: var(--red);
+      color: white;
+      border-top-color: var(--red-deep);
+    }
+
+    .fortis-card .label {
+      font-size: 7.5pt;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 3mm;
+    }
+
+    .fortis-card.dark .label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .fortis-card.red .label {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .fortis-card .n {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 32pt;
+      line-height: 1;
+      letter-spacing: -0.025em;
+    }
+
+    .fortis-card .desc {
+      font-size: 9pt;
+      color: var(--muted);
+      margin-top: 3mm;
+      line-height: 1.4;
+    }
+
+    .fortis-card.dark .desc {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .fortis-card.red .desc {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .benchmark-table {
+      margin-top: 4mm;
+      padding: 6mm;
+      background: var(--grey-2);
+      color: var(--ink);
+      border-radius: 6px;
+    }
+
+    .benchmark-table .ttl {
+      font-family: var(--display);
+      font-size: 14pt;
+      font-weight: 700;
+      margin-bottom: 4mm;
+    }
+
+    .benchmark-rows {
+      display: grid;
+      gap: 2mm;
+    }
+
+    .benchmark-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 4mm;
+      align-items: center;
+      padding: 3mm 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: 9pt;
+    }
+
+    .benchmark-row:last-child {
+      border-bottom: 0;
+    }
+
+    .benchmark-row.you {
+      background: rgba(250, 55, 55, 0.08);
+      padding: 3mm 4mm;
+      border-radius: 3px;
+      border: 1px solid rgba(250, 55, 55, 0.25);
+      margin: 1mm 0;
+    }
+
+    .benchmark-row .hosp {
+      font-weight: 600;
+    }
+
+    .benchmark-row .bar {
+      position: relative;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+      overflow: hidden;
+      display: block;
+    }
+
+    .benchmark-row .bar .fill {
+      display: block;
+      height: 100%;
+      background: var(--red);
+      border-radius: 4px;
+    }
+
+    .benchmark-row .num {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 11pt;
+      min-width: 24mm;
+      text-align: right;
+    }
+
+    .benchmark-row.you .num {
+      color: var(--red);
+    }
+
+    .note {
+      margin-top: 4mm;
+      font-size: 8pt;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ============================================================
    PAGE 2 (02) — THE OPPORTUNITY
    ============================================================ */
-.opp-headline { font-family: var(--display); font-weight: 700; font-size: 50pt; line-height: 0.95; letter-spacing: -0.035em; margin-bottom: 4mm; }
-.opp-headline em { font-family: var(--script); color: var(--red); font-style: italic; }
-.opp-lead { font-size: 11pt; color: var(--muted); line-height: 1.55; max-width: 88%; margin-bottom: 8mm; }
-.opp-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
-.opp-card { padding: 6mm; background: var(--grey-2); border-radius: 6px; position: relative; }
-.opp-card.red { background: var(--red); color: white; }
-.opp-card .icon { width: 12mm; height: 12mm; background: var(--red); color: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 14pt; margin-bottom: 4mm; }
-.opp-card.red .icon { background: white; color: var(--red); }
-.opp-card h4 { font-family: var(--display); font-weight: 700; font-size: 14pt; line-height: 1.1; margin-bottom: 2mm; letter-spacing: -0.01em; }
-.opp-card p { font-size: 9pt; line-height: 1.55; color: var(--ink-2); }
-.opp-card.red p { color: rgba(255,255,255,0.9); }
+    .opp-headline {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 50pt;
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      margin-bottom: 4mm;
+    }
 
-/* ============================================================
+    .opp-headline em {
+      font-family: var(--script);
+      color: var(--red);
+      font-style: italic;
+    }
+
+    .opp-lead {
+      font-size: 11pt;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 88%;
+      margin-bottom: 8mm;
+    }
+
+    .opp-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+    }
+
+    .opp-card {
+      padding: 6mm;
+      background: var(--grey-2);
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .opp-card.red {
+      background: var(--red);
+      color: white;
+    }
+
+    .opp-card .icon {
+      width: 12mm;
+      height: 12mm;
+      background: var(--red);
+      color: white;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14pt;
+      margin-bottom: 4mm;
+    }
+
+    .opp-card.red .icon {
+      background: white;
+      color: var(--red);
+    }
+
+    .opp-card h4 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14pt;
+      line-height: 1.1;
+      margin-bottom: 2mm;
+      letter-spacing: -0.01em;
+    }
+
+    .opp-card p {
+      font-size: 9pt;
+      line-height: 1.55;
+      color: var(--ink-2);
+    }
+
+    .opp-card.red p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ============================================================
    PAGE 3 (03) — DELIVERABLES (CONSOLIDATED)
    ============================================================ */
-.deliv-headline { font-family: var(--display); font-weight: 700; font-size: 32pt; line-height: 1; letter-spacing: -0.025em; margin-bottom: 2mm; }
-.deliv-headline .num { font-family: var(--display); font-weight: 700; color: var(--red); font-style: italic; }
-.deliv-sub { font-size: 10pt; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6mm; }
+    .deliv-headline {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 32pt;
+      line-height: 1;
+      letter-spacing: -0.025em;
+      margin-bottom: 2mm;
+    }
 
-.deliv-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4mm 6mm;
-  margin-top: 4mm;
-}
-.deliv-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.deliv-item-header {
-  display: flex;
-  align-items: center;
-  gap: 3mm;
-  margin-bottom: 2mm;
-}
-.deliv-icon {
-  width: 8mm;
-  height: 8mm;
-  background: var(--red);
-  color: white;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.deliv-icon svg {
-  width: 4.5mm;
-  height: 4.5mm;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
-.deliv-item-header h3 {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 11.5pt;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 0;
-}
-.deliv-content p {
-  font-size: 8pt;
-  line-height: 1.45;
-  color: var(--ink-2);
-  margin-bottom: 2mm;
-}
-.deliv-content p b { font-weight: 700; }
-.deliv-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5mm;
-}
-.deliv-list li {
-  position: relative;
-  padding-left: 10px;
-  font-size: 8pt;
-  line-height: 1.35;
-  font-weight: 500;
-}
-.deliv-list li::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 4px;
-  width: 4.5px; height: 4.5px;
-  background: var(--red);
-}
+    .deliv-headline .num {
+      font-family: var(--display);
+      font-weight: 700;
+      color: var(--red);
+      font-style: italic;
+    }
 
-/* ============================================================
+    .deliv-sub {
+      font-size: 10pt;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 6mm;
+    }
+
+    .deliv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm 6mm;
+      margin-top: 4mm;
+    }
+
+    .deliv-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .deliv-item-header {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      margin-bottom: 2mm;
+    }
+
+    .deliv-icon {
+      width: 8mm;
+      height: 8mm;
+      background: var(--red);
+      color: white;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .deliv-icon svg {
+      width: 4.5mm;
+      height: 4.5mm;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .deliv-item-header h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 11.5pt;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0;
+    }
+
+    .deliv-content p {
+      font-size: 8pt;
+      line-height: 1.45;
+      color: var(--ink-2);
+      margin-bottom: 2mm;
+    }
+
+    .deliv-content p b {
+      font-weight: 700;
+    }
+
+    .deliv-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5mm;
+    }
+
+    .deliv-list li {
+      position: relative;
+      padding-left: 10px;
+      font-size: 8pt;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    .deliv-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 4.5px;
+      height: 4.5px;
+      background: var(--red);
+    }
+
+    /* ============================================================
    PAGE 4 (04) — OUR OFFER
    ============================================================ */
-.offer-headline { font-family: var(--display); font-weight: 700; font-size: 56pt; line-height: 0.95; letter-spacing: -0.035em; margin-bottom: 4mm; }
-.offer-headline em { font-family: var(--script); color: var(--red); font-style: italic; }
-.offer-sub { font-size: 11pt; color: var(--muted); line-height: 1.55; max-width: 85%; margin-bottom: 10mm; }
-.offer-card { background: var(--ink); color: white; border-radius: 10px; padding: 10mm; position: relative; overflow: hidden; }
-.offer-card::before { content: ""; position: absolute; top: -25mm; right: -25mm; width: 60mm; height: 60mm; background: var(--red); opacity: 0.18; border-radius: 50%; }
-.offer-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: white; padding: 2mm 4mm; border-radius: 30px; font-size: 9pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8mm; position: relative; z-index: 2;}
-.offer-tag::before { content: ""; width: 8px; height: 8px; background: white; border-radius: 50%; }
-.price-block { display: flex; align-items: flex-start; gap: 4mm; margin-bottom: 8mm; position: relative; z-index: 2;}
-.price-currency { font-family: var(--display); font-size: 32pt; font-weight: 600; line-height: 1; margin-top: 5mm; opacity: 0.7; }
-.price-number { font-family: var(--display); font-size: 76pt; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: white; }
-.price-period { font-family: var(--display); font-size: 14pt; font-weight: 500; margin-top: 8mm; opacity: 0.7; letter-spacing: -0.01em; }
-.offer-includes { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 8mm; margin-bottom: 4mm; position: relative; z-index: 2;}
-.offer-include { display: flex; align-items: flex-start; gap: 8px; font-size: 10pt; line-height: 1.4; font-weight: 500; }
-.offer-include .check { width: 18px; height: 18px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .offer-headline {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 56pt;
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      margin-bottom: 4mm;
+    }
 
-/* ============================================================
+    .offer-headline em {
+      font-family: var(--script);
+      color: var(--red);
+      font-style: italic;
+    }
+
+    .offer-sub {
+      font-size: 11pt;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 85%;
+      margin-bottom: 10mm;
+    }
+
+    .offer-card {
+      background: var(--ink);
+      color: white;
+      border-radius: 10px;
+      padding: 10mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-card::before {
+      content: "";
+      position: absolute;
+      top: -25mm;
+      right: -25mm;
+      width: 60mm;
+      height: 60mm;
+      background: var(--red);
+      opacity: 0.18;
+      border-radius: 50%;
+    }
+
+    .offer-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: white;
+      padding: 2mm 4mm;
+      border-radius: 30px;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .offer-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .price-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 4mm;
+      margin-bottom: 8mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .price-currency {
+      font-family: var(--display);
+      font-size: 32pt;
+      font-weight: 600;
+      line-height: 1;
+      margin-top: 5mm;
+      opacity: 0.7;
+    }
+
+    .price-number {
+      font-family: var(--display);
+      font-size: 76pt;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      color: white;
+    }
+
+    .price-period {
+      font-family: var(--display);
+      font-size: 14pt;
+      font-weight: 500;
+      margin-top: 8mm;
+      opacity: 0.7;
+      letter-spacing: -0.01em;
+    }
+
+    .offer-includes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm 8mm;
+      margin-bottom: 4mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .offer-include {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 10pt;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .offer-include .check {
+      width: 18px;
+      height: 18px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ============================================================
    PAGE 5 (05) — CONTACT US
    ============================================================ */
-.contact-headline { font-family: var(--display); font-weight: 700; font-size: 84pt; line-height: 0.85; letter-spacing: -0.04em; margin-bottom: 6mm; }
-.contact-headline em { font-family: var(--script); color: var(--red); font-style: italic; display: block; font-size: 0.55em; line-height: 1; margin-bottom: -10mm; }
-.contact-sub { font-size: 12pt; color: var(--muted); line-height: 1.55; max-width: 80%; margin-bottom: 14mm; }
-.contact-grid { display: grid; grid-template-columns: 1fr; gap: 6mm; }
-.contact-block { padding: 7mm; background: var(--grey-2); border-radius: 6px; border-left: 4px solid var(--red); }
-.contact-block .label { font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 3mm; }
-.contact-block .val { font-family: var(--display); font-size: 18pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; }
-.contact-block .val.small { font-size: 14pt; word-break: break-word; }
-.contact-block .desc { font-size: 9.5pt; color: var(--muted); margin-top: 3mm; line-height: 1.4; }
-.contact-signature { position: absolute; bottom: 25mm; left: 18mm; font-family: var(--script); color: var(--red); font-size: 28pt; font-style: italic; transform: rotate(-3deg); transform-origin: left; }
+    .contact-headline {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 84pt;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      margin-bottom: 6mm;
+    }
 
-</style>
+    .contact-headline em {
+      font-family: var(--script);
+      color: var(--red);
+      font-style: italic;
+      display: block;
+      font-size: 0.55em;
+      line-height: 1;
+      margin-bottom: -10mm;
+    }
+
+    .contact-sub {
+      font-size: 12pt;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 80%;
+      margin-bottom: 14mm;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6mm;
+    }
+
+    .contact-block {
+      padding: 7mm;
+      background: var(--grey-2);
+      border-radius: 6px;
+      border-left: 4px solid var(--red);
+    }
+
+    .contact-block .label {
+      font-size: 8pt;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 3mm;
+    }
+
+    .contact-block .val {
+      font-family: var(--display);
+      font-size: 18pt;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .contact-block .val.small {
+      font-size: 14pt;
+      word-break: break-word;
+    }
+
+    .contact-block .desc {
+      font-size: 9.5pt;
+      color: var(--muted);
+      margin-top: 3mm;
+      line-height: 1.4;
+    }
+
+    .contact-signature {
+      position: absolute;
+      bottom: 25mm;
+      left: 18mm;
+      font-family: var(--script);
+      color: var(--red);
+      font-size: 28pt;
+      font-style: italic;
+      transform: rotate(-3deg);
+      transform-origin: left;
+    }
+
+    /* Page-1 collab logo strip — controlled by :root variables above */
+    .collab-strip {
+      position: absolute;
+      top: var(--logo-top);
+      left: 45%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Page-1 cover image — controlled entirely by :root variables above */
+    .cover-img {
+      position: absolute;
+      top: var(--img-top);
+      right: var(--img-right);
+      width: var(--img-width);
+      height: var(--img-height);
+      object-fit: cover;
+      z-index: 1;
+      border-radius: var(--img-radius);
+      opacity: var(--img-opacity);
+      transform: scale(var(--img-scale));
+      transform-origin: top right;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="page">
-  <div class="brand-mark"></div>
-  <div class="page-eyebrow">Pixlate × Fortis</div>
-  <div class="page-foot">01 · Where Fortis Stands Today</div>
-  <div class="page-no">/ 01</div>
+  <div class="page">
+    <div class="brand-mark"></div>
 
-  <div class="page-body">
-    <div class="dot-eyebrow">The Audit</div>
-
-    <h2 class="fortis-headline" style="margin-top: 6mm; font-size: 36pt;">
-      Fortis Mohali — a <span class="red">top</span> hospital<br>
-      with immense scope for scalability.
-    </h2>
-
-    <p class="fortis-lead" style="font-size: 10pt; margin-bottom: 6mm;">
-      Fortis Hospital, Mohali is a 400-bed, JCI-accredited, 42-specialty tertiary care hospital — the leading multi-specialty facility in Punjab, Haryana, Himachal, and J&amp;K. Its digital presence today represents an untapped opportunity for substantial growth and brand scalability.
-    </p>
-
-    <div class="fortis-stat-row" style="margin-bottom: 5mm;">
-      <div class="fortis-card red" style="padding: 4mm;">
-        <div class="label">Current Footprint</div>
-        <div class="n" style="font-size: 26pt;">8.6K</div>
-        <div class="desc" style="font-size: 8pt;">Instagram followers on @fortismohali — across 1,746 posts.</div>
-      </div>
-      <div class="fortis-card" style="padding: 4mm;">
-        <div class="label">Hospital Beds</div>
-        <div class="n" style="font-size: 26pt;">400+</div>
-        <div class="desc" style="font-size: 8pt;">Multi-specialty tertiary care hospital</div>
-      </div>
-      <div class="fortis-card" style="padding: 4mm;">
-        <div class="label">Specialties</div>
-        <div class="n" style="font-size: 26pt;">42</div>
-        <div class="desc" style="font-size: 8pt;">Including Fortis Cancer Institute, Cardiac, Neurosciences</div>
-      </div>
-      <div class="fortis-card" style="padding: 4mm;">
-        <div class="label">JCI Re-accreditations</div>
-        <div class="n" style="font-size: 26pt;">6×</div>
-        <div class="desc" style="font-size: 8pt;">Re-accredited 6 times in a row</div>
-      </div>
-    </div>
-
-    <div class="benchmark-table">
-      <div class="ttl">Peer Benchmark — Hospital Instagram Footprint</div>
-      <div class="benchmark-rows">
-        <div class="benchmark-row">
-          <span class="hosp">Manipal Hospitals (@manipalhospitals)</span>
-          <span class="bar"><span class="fill" style="width: 100%;"></span></span>
-          <span class="num">137K</span>
-        </div>
-        <div class="benchmark-row">
-          <span class="hosp">Apollo Hospitals (@theapollohospitals)</span>
-          <span class="bar"><span class="fill" style="width: 92%;"></span></span>
-          <span class="num">126K</span>
-        </div>
-        <div class="benchmark-row">
-          <span class="hosp">Apollo Clinic (@apolloclinics)</span>
-          <span class="bar"><span class="fill" style="width: 23%;"></span></span>
-          <span class="num">31K</span>
-        </div>
-        <div class="benchmark-row">
-          <span class="hosp">Indraprastha Apollo Delhi</span>
-          <span class="bar"><span class="fill" style="width: 20%;"></span></span>
-          <span class="num">28K</span>
-        </div>
-        <div class="benchmark-row">
-          <span class="hosp">Apollo Hospitals Indore</span>
-          <span class="bar"><span class="fill" style="width: 11%;"></span></span>
-          <span class="num">15K</span>
-        </div>
-        <div class="benchmark-row you">
-          <span class="hosp">Fortis Hospital Mohali (@fortismohali)</span>
-          <span class="bar"><span class="fill" style="width: 6.3%;"></span></span>
-          <span class="num">8.6K</span>
+    <div class="collab-strip">
+      <div style="display: flex; align-items: center; gap: 150px;">
+        <img src="fortis.png" alt="Fortis Healthcare"
+          style="height: 280px; width: auto; display: block; object-fit: contain;" />
+        <div style="position: relative; width: 180px; height: 180px; flex-shrink: 0;">
+          <div
+            style="position: absolute; width: 120px; height: 120px; background: #ED3224; top: 0; left: 15px; z-index: 2;">
+          </div>
+          <div
+            style="position: absolute; width: 120px; height: 120px; background: #c8c8c8; bottom: 0; right: 0; z-index: 1;">
+          </div>
         </div>
       </div>
     </div>
 
-    <p class="note" style="margin-top: 3mm; font-size: 7.5pt;">
-      Benchmarks selected from hospitals actively investing in digital-first healthcare communication.
-    </p>
-  </div>
-</div>
+    <div class="page-body"
+      style="display: flex; flex-direction: column; justify-content: center; height: 100%; padding-top: 40mm;">
 
-<div class="page">
-  <div class="brand-mark"></div>
-  <div class="page-eyebrow">Pixlate × Fortis</div>
-  <div class="page-foot">02 · The Opportunity</div>
-  <div class="page-no">/ 02</div>
-
-  <div class="page-body">
-    <div class="dot-eyebrow">The Opportunity</div>
-
-    <h1 class="opp-headline" style="margin-top: 6mm; font-size: 42pt;">
-      What we want<br>to <em>build</em> together.
-    </h1>
-
-    <p class="opp-lead" style="font-size: 10pt; margin-bottom: 7mm; max-width: 88%;">
-      Fortis Mohali possesses the ultimate content engine: 200+ specialists, 42 departments, and proven patient outcomes. We bridge the gap between your clinical excellence and a digitally engaged region seeking trustworthy healthcare.
-    </p>
-
-    <div class="opp-cards" style="gap: 4mm;">
-      <div class="opp-card red" style="padding: 4.5mm;">
-        <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">01</div>
-        <h4 style="font-size: 13pt; margin-bottom: 2mm;">Trust at Scale</h4>
-        <p style="font-size: 8.5pt; line-height: 1.45;">Transform doctors into recognizable authorities, driving consultation conversions proactively.</p>
+      <div class="dot-eyebrow" style="margin-bottom: 8mm;">
+        Strategic Proposal
       </div>
-      <div class="opp-card" style="padding: 4.5mm;">
-        <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">02</div>
-        <h4 style="font-size: 13pt; margin-bottom: 2mm;">Awareness That Converts</h4>
-        <p style="font-size: 8.5pt; line-height: 1.45;">Deploy cinematic specialty campaigns and educational content for strong top-of-mind symptom recall.</p>
-      </div>
-      <div class="opp-card" style="padding: 4.5mm;">
-        <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">03</div>
-        <h4 style="font-size: 13pt; margin-bottom: 2mm;">Premium Brand Equity</h4>
-        <p style="font-size: 8.5pt; line-height: 1.45;">Establish a cohesive, modern visual identity rivaling top-tier healthcare institutions nationally.</p>
-      </div>
-      <div class="opp-card" style="padding: 4.5mm;">
-        <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">04</div>
-        <h4 style="font-size: 13pt; margin-bottom: 2mm;">Region-First Reach</h4>
-        <p style="font-size: 8.5pt; line-height: 1.45;">Deliver hyper-targeted, bilingual content optimized for Punjab, Haryana, Himachal Pradesh, and J&amp;K.</p>
-      </div>
-      <div class="opp-card" style="padding: 4.5mm;">
-        <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">05</div>
-        <h4 style="font-size: 13pt; margin-bottom: 2mm;">Multi-Platform Assets</h4>
-        <p style="font-size: 8.5pt; line-height: 1.45;">Maximize ROI by turning CMEs, health camps, and panels into high-yield, ready-to-publish digital assets.</p>
-      </div>
-      <div class="opp-card" style="padding: 4.5mm;">
-        <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">06</div>
-        <h4 style="font-size: 13pt; margin-bottom: 2mm;">Unlocking Scale</h4>
-        <p style="font-size: 8.5pt; line-height: 1.45;">Bridge the benchmark gap to 137K+ followers through a robust, 12-month targeted growth engine.</p>
-      </div>
-    </div>
-  </div>
-</div>
+      <h1
+        style="font-family: var(--display); font-weight: 700; font-size: 65pt; line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 6mm; color: var(--ink);">
+        Strategic Content<br>
+        <em
+          style="font-family: var(--script); color: var(--red); font-style: italic; font-size: 1.1em;">Partnership.</em>
+      </h1>
 
-<div class="page">
-  <div class="brand-mark"></div>
-  <div class="page-eyebrow">Pixlate × Fortis</div>
-  <div class="page-foot">03 · Deliverables</div>
-  <div class="page-no">/ 03</div>
+      <p style="font-size: 12pt; color: var(--muted); max-width: 70%; line-height: 1.55; margin-bottom: 20mm;">
+        Translating clinical excellence into a commanding digital presence. A dedicated video and content growth
+        strategy for the region's leading healthcare institution.
+      </p>
 
-  <div class="page-body">
-    <div class="dot-eyebrow">Methodology</div>
-
-    <h2 class="deliv-headline" style="margin-top: 4mm;">
-      The Eight-Point<br><span class="num">Strategy.</span>
-    </h2>
-    <div class="deliv-sub">End-to-End Content Execution System</div>
-
-    <div class="deliv-grid">
-      
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      <div
+        style="margin-top: auto; border-top: 1px solid var(--grey-3); padding-top: 8mm; padding-left: 4mm; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
+        <div>
+          <div
+            style="font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 2mm;">
+            Presented To</div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="fortis.png" alt="Fortis Healthcare"
+              style="height: 22px; width: auto; display: block; object-fit: contain;" />
+            <span style="font-family: var(--display); font-size: 16pt; font-weight: 700; color: #09a954;">Fortis
+              Mohali</span>
           </div>
-          <h3>Content Planning Before Shoot Day</h3>
         </div>
-        <div class="deliv-content">
-          <p>Strategy dictates execution. All content planning happens <b>long before the shoot</b>, mapping topics and hooks in advance.</p>
-          <ul class="deliv-list">
-            <li>Pre-shoot topic mapping</li>
-            <li>Doctor scripting &amp; hook prep</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line></svg>
+        <div style="margin-left:3em">
+          <div
+            style="font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 2mm;">
+            Prepared By</div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="position: relative; width: 26px; height: 26px; flex-shrink: 0;">
+              <div
+                style="position: absolute; width: 17px; height: 17px; background: #ED3224; top: 0; left: 2px; z-index: 2;">
+              </div>
+              <div
+                style="position: absolute; width: 17px; height: 17px; background: #c8c8c8; bottom: 0; right: 0; z-index: 1;">
+              </div>
+            </div>
+            <span style="font-family: var(--display); font-size: 16pt; font-weight: 700; color: var(--red);">Pixlate
+              Digital</span>
           </div>
-          <h3>High-Quality Doctor Reels</h3>
-        </div>
-        <div class="deliv-content">
-          <p>We use <b>mirrorless cinema cameras, proper lighting setups, and wireless mics</b> to make doctors look authoritative and premium.</p>
-          <ul class="deliv-list">
-            <li>Mirrorless cinema gear</li>
-            <li>Strong 3-second hooks &amp; subtitles</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </div>
-          <h3>Dedicated Healthcare Team</h3>
-        </div>
-        <div class="deliv-content">
-          <p>Unlike general agencies, we deploy <b>personnel dedicated specifically to healthcare</b> to ensure medical accuracy.</p>
-          <ul class="deliv-list">
-            <li>Healthcare-specialist editors</li>
-            <li>Medical content coordinators</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
-          </div>
-          <h3>Premium Specialty Videos</h3>
-        </div>
-        <div class="deliv-content">
-          <p>We pivot to <b>cinematic storytelling</b> for department videos, making your super-specialty wings look world-class.</p>
-          <ul class="deliv-list">
-            <li>Gimbal cinematic direction</li>
-            <li>Department walkthroughs</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          </div>
-          <h3>Faster Event Coverage</h3>
-        </div>
-        <div class="deliv-content">
-          <p>We provide same-day highlight reels and quick doctor bytes <b>during the event itself</b> so momentum isn't lost.</p>
-          <ul class="deliv-list">
-            <li>Same-day highlight reels</li>
-            <li>Live in-event social snippets</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
-          </div>
-          <h3>Podcast Multi-Content Engine</h3>
-        </div>
-        <div class="deliv-content">
-          <p>One podcast shoot yields <b>multiple content pieces</b> — short reels, clips, and snippets to fuel a month's pipeline.</p>
-          <ul class="deliv-list">
-            <li>10–15 short reels per podcast</li>
-            <li>Educational snippet edits</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-          </div>
-          <h3>Proper Coordination Workflow</h3>
-        </div>
-        <div class="deliv-content">
-          <p>Structured monthly shoot planning, shared approvals, and organized backups drastically reduce follow-ups.</p>
-          <ul class="deliv-list">
-            <li>Monthly shoot calendar</li>
-            <li>Shared approval workflow</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="deliv-item">
-        <div class="deliv-item-header">
-          <div class="deliv-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          </div>
-          <h3>Consistent Brand Look</h3>
-        </div>
-        <div class="deliv-content">
-          <p>We eradicate visual inconsistency across 42 departments through <b>unified subtitle styling</b> and professional tones.</p>
-          <ul class="deliv-list">
-            <li>Standardised caption system</li>
-            <li>Consistent reel aesthetics</li>
-          </ul>
         </div>
       </div>
 
     </div>
   </div>
-</div>
 
-<div class="page">
-  <div class="brand-mark"></div>
-  <div class="page-eyebrow">Pixlate × Fortis</div>
-  <div class="page-foot">04 · Our Offer</div>
-  <div class="page-no">/ 04</div>
+  <div class="page">
+    <div class="brand-mark"></div>
+    <div class="page-eyebrow">Pixlate × Fortis</div>
+    <div class="page-foot">01 · Where Fortis Stands Today</div>
+    <div class="page-no">/ 01</div>
 
-  <div class="page-body">
-    <div class="dot-eyebrow">Our Offer</div>
+    <div class="page-body">
+      <div class="dot-eyebrow">The Audit</div>
 
-    <h1 class="offer-headline" style="margin-top: 6mm; font-size: 42pt;">
-      A <em>partnership-first</em><br>
-      retainer model, built for trust.
-    </h1>
+      <h2 class="fortis-headline" style="margin-top: 6mm; font-size: 36pt;">
+        <img src="fortis.png" alt="Fortis Healthcare" style="height: 44px;
+    width: auto;
+    display: inline-block;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: -10px;
+    margin-bottom: 12px;" />
+        <span style="font-family: var(--display); font-weight: 700; color: #09a954;">Fortis Mohali</span><br> a <span
+          class="red">leading hospital</span>
+        <br>poised for digital scale.
+      </h2>
 
-    <p class="offer-sub" style="font-size: 10pt; margin-bottom: 6mm; max-width: 88%;">
-      Curated exclusively for a top-tier institution with immense growth potential, we have designed a transparent, all-inclusive monthly retainer tailored to Fortis Mohali's exact requirements. This model covers every deliverable outlined in this strategy — with no separate per-reel or per-shoot charges.
-    </p>
+      <p class="fortis-lead" style="font-size: 10pt; margin-bottom: 6mm;">
+        Fortis Hospital, Mohali is a 400-bed, JCI-accredited, 42-specialty tertiary care hospital — the leading
+        multi-specialty facility in Punjab, Haryana, Himachal, and J&amp;K. Its digital presence today represents an
+        untapped opportunity for substantial growth and brand scalability.
+      </p>
 
-    <div class="offer-card" style="padding: 8mm;">
-      <div class="offer-card-inner">
-        <div class="offer-tag" style="margin-bottom: 6mm;">Partnership-First Pricing</div>
-
-        <div class="price-block" style="margin-bottom: 6mm;">
-          <span class="price-currency" style="font-size: 24pt; margin-top: 4mm;">₹</span>
-          <span class="price-number" style="font-size: 64pt;">1,24,999</span>
-          <span class="price-period" style="font-size: 12pt; margin-top: 6mm;">/ month (ex taxes)</span>
+      <div class="fortis-stat-row" style="margin-bottom: 5mm;">
+        <div class="fortis-card red" style="padding: 4mm;">
+          <div class="label">Current Footprint</div>
+          <div class="n" style="font-size: 26pt;">9.4K+</div>
+          <div class="desc" style="font-size: 8pt;">Instagram followers on @fortismohali — across 1,746 posts.</div>
         </div>
-
-        <div class="offer-includes" style="gap: 2.5mm 6mm; margin-bottom: 5mm;">
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Monthly content planning &amp; shoot calendar</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 15–20 doctor reels/month, end-to-end</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 1–2 cinematic specialty videos</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Event coverage (rapid-turnaround same-day delivery)</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 1 podcast shoot → multi-format content</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Dedicated healthcare content team</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Pro cinema gear, mics &amp; lighting</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Branded subtitle &amp; motion graphics system</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Fixed monthly shoot days</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Guaranteed monthly content output</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 24-hour response turnaround</div>
-          <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Monthly performance &amp; growth report</div>
+        <div class="fortis-card" style="padding: 4mm;">
+          <div class="label">Hospital Beds</div>
+          <div class="n" style="font-size: 26pt;">400+</div>
+          <div class="desc" style="font-size: 8pt;">Multi-specialty tertiary care hospital</div>
         </div>
+        <div class="fortis-card" style="padding: 4mm;">
+          <div class="label">Specialties</div>
+          <div class="n" style="font-size: 26pt;">42</div>
+          <div class="desc" style="font-size: 8pt;">Including Fortis Cancer Institute, Cardiac, Neurosciences</div>
+        </div>
+        <div class="fortis-card" style="padding: 4mm;">
+          <div class="label">JCI Re-accreditations</div>
+          <div class="n" style="font-size: 26pt;">6×</div>
+          <div class="desc" style="font-size: 8pt;">Re-accredited 6 times in a row</div>
+        </div>
+      </div>
 
-        <div class="offer-note" style="margin-top: 4mm; padding-top: 4mm; font-size: 8pt;">
-          *Partnership-first pricing locked for the first 6 months. Add-on services (paid media, OOH adaptations, EN/HI/PA versioning) quoted separately. Taxes applicable. Terms shared on engagement.
+      <div class="benchmark-table">
+        <div class="ttl">Peer Benchmark — Hospital Instagram Footprint</div>
+        <div class="benchmark-rows">
+          <div class="benchmark-row">
+            <span class="hosp">Manipal Hospitals (@manipalhospitals)</span>
+            <span class="bar"><span class="fill" style="width: 100%;"></span></span>
+            <span class="num">137K</span>
+          </div>
+          <div class="benchmark-row">
+            <span class="hosp">Apollo Hospitals (@theapollohospitals)</span>
+            <span class="bar"><span class="fill" style="width: 92%;"></span></span>
+            <span class="num">126K</span>
+          </div>
+          <div class="benchmark-row">
+            <span class="hosp">Apollo Clinic (@apolloclinics)</span>
+            <span class="bar"><span class="fill" style="width: 23%;"></span></span>
+            <span class="num">31K</span>
+          </div>
+          <div class="benchmark-row">
+            <span class="hosp">Indraprastha Apollo Delhi</span>
+            <span class="bar"><span class="fill" style="width: 20%;"></span></span>
+            <span class="num">28K</span>
+          </div>
+          <div class="benchmark-row">
+            <span class="hosp">Apollo Hospitals Indore</span>
+            <span class="bar"><span class="fill" style="width: 11%;"></span></span>
+            <span class="num">15K</span>
+          </div>
+          <div class="benchmark-row you">
+            <span class="hosp">Fortis Hospital Mohali (@fortismohali)</span>
+            <span class="bar"><span class="fill" style="width: 6.8%;"></span></span>
+            <span class="num">9.4K+</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top: 3mm; font-size: 7.5pt;">
+        Benchmarks selected from hospitals actively investing in digital-first healthcare communication.
+      </p>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="brand-mark"></div>
+    <div class="page-eyebrow">Pixlate × Fortis</div>
+    <div class="page-foot">02 · The Opportunity</div>
+    <div class="page-no">/ 02</div>
+
+    <div class="page-body">
+      <div class="dot-eyebrow">The Opportunity</div>
+
+      <h1 class="opp-headline" style="margin-top: 6mm; font-size: 42pt;">
+        What we want<br>to <em>build</em> together.
+      </h1>
+
+      <p class="opp-lead" style="font-size: 10pt; margin-bottom: 7mm; max-width: 88%;">
+        Fortis Mohali possesses the ultimate content engine: 200+ specialists, 42 departments, and proven patient
+        outcomes. We bridge the gap between your clinical excellence and a digitally engaged region seeking trustworthy
+        healthcare.
+      </p>
+
+      <div class="opp-cards" style="gap: 4mm;">
+        <div class="opp-card red" style="padding: 4.5mm;">
+          <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">01</div>
+          <h4 style="font-size: 13pt; margin-bottom: 2mm;">Trust at Scale</h4>
+          <p style="font-size: 8.5pt; line-height: 1.45;">Transform doctors into recognizable authorities, driving
+            consultation conversions proactively.</p>
+        </div>
+        <div class="opp-card" style="padding: 4.5mm;">
+          <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">02</div>
+          <h4 style="font-size: 13pt; margin-bottom: 2mm;">Awareness That Converts</h4>
+          <p style="font-size: 8.5pt; line-height: 1.45;">Deploy cinematic specialty campaigns and educational content
+            for strong top-of-mind symptom recall.</p>
+        </div>
+        <div class="opp-card" style="padding: 4.5mm;">
+          <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">03</div>
+          <h4 style="font-size: 13pt; margin-bottom: 2mm;">Premium Brand Equity</h4>
+          <p style="font-size: 8.5pt; line-height: 1.45;">Establish a cohesive, modern visual identity rivaling top-tier
+            healthcare institutions nationally.</p>
+        </div>
+        <div class="opp-card" style="padding: 4.5mm;">
+          <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">04</div>
+          <h4 style="font-size: 13pt; margin-bottom: 2mm;">Region-First Reach</h4>
+          <p style="font-size: 8.5pt; line-height: 1.45;">Deliver hyper-targeted, bilingual content optimized for
+            Punjab, Haryana, Himachal Pradesh, and J&amp;K.</p>
+        </div>
+        <div class="opp-card" style="padding: 4.5mm;">
+          <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">05</div>
+          <h4 style="font-size: 13pt; margin-bottom: 2mm;">Multi-Platform Assets</h4>
+          <p style="font-size: 8.5pt; line-height: 1.45;">Maximize ROI by turning CMEs, health camps, and panels into
+            high-yield, ready-to-publish digital assets.</p>
+        </div>
+        <div class="opp-card" style="padding: 4.5mm;">
+          <div class="icon" style="width: 10mm; height: 10mm; font-size: 12pt; margin-bottom: 3mm;">06</div>
+          <h4 style="font-size: 13pt; margin-bottom: 2mm;">Building a Consistent Content Engine</h4>
+          <p style="font-size: 8.5pt; line-height: 1.45;">Bridge the benchmark gap to 137K+ followers through a robust,
+            12-month targeted growth engine.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="page">
-  <div class="brand-mark"></div>
-  <div class="page-eyebrow">Pixlate Digital</div>
-  <div class="page-foot">05 · Let's Talk</div>
-  <div class="page-no">/ 05</div>
+  <div class="page">
+    <div class="brand-mark"></div>
+    <div class="page-eyebrow">Pixlate × Fortis</div>
+    <div class="page-foot">03 · Deliverables</div>
+    <div class="page-no">/ 03</div>
 
-  <div class="page-body">
-    <h1 class="contact-headline" style="margin-top: 4mm; font-size: 64pt; line-height: 0.7;">
-      <em style="font-size: 0.5em;">let's</em><br>
-      talk in<br>
-      person.
-    </h1>
+    <div class="page-body">
+      <div class="dot-eyebrow">Methodology</div>
 
-    <p class="contact-sub" style="font-size: 11pt; margin-bottom: 10mm;margin-top:10mm;">
-      We'd love to walk you through how we'd approach Fortis Mohali in detail — the calendar, the shoot rhythm, the first 30 days.
-    </p>
+      <h2 class="deliv-headline" style="margin-top: 4mm;">
+        The Eight-Point<br><span class="num">Strategy.</span>
+      </h2>
+      <div class="deliv-sub">End-to-End Content Execution System</div>
 
-    <div class="contact-grid" style="gap: 5mm; grid-template-columns: 1fr;">
-      <div class="contact-block" style="padding: 5mm;">
-        <div class="label">Email</div>
-        <div class="val small" style="font-size: 13pt;">reach@pixlate.digital</div>
-        <div class="desc" style="font-size: 8.5pt;">For pitch responses, briefs &amp; commercials.</div>
-      </div>
-      <div class="contact-block" style="padding: 5mm;">
-        <div class="label">Primary Contact</div>
-        <div class="val small" style="font-size: 15pt; margin-bottom: 2mm;">Pardeep Singh</div>
-        <div style="font-size: 13pt; font-weight: 700; margin-bottom: 2mm; color: var(--ink);">+91 79863 88768</div>
-        <div style="font-size: 10pt; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;">Sr. Manager - Client Relations</div>
+      <div class="deliv-grid">
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3>Content Planning Before Shoot Day</h3>
+          </div>
+          <div class="deliv-content">
+            <p>Strategy dictates execution. All content planning happens <b>long before the shoot</b>, mapping topics
+              and hooks in advance.</p>
+            <ul class="deliv-list">
+              <li>Pre-shoot topic mapping</li>
+              <li>Doctor scripting &amp; hook prep</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line x1="2" y1="7" x2="7" y2="7"></line>
+                <line x1="2" y1="17" x2="7" y2="17"></line>
+              </svg>
+            </div>
+            <h3>High-Quality Doctor Reels</h3>
+          </div>
+          <div class="deliv-content">
+            <p>We use <b>mirrorless cinema cameras, proper lighting setups, and wireless mics</b> to make doctors look
+              authoritative and premium.</p>
+            <ul class="deliv-list">
+              <li>Mirrorless cinema gear</li>
+              <li>Strong 3-second hooks &amp; subtitles</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Dedicated Healthcare Team</h3>
+          </div>
+          <div class="deliv-content">
+            <p>Unlike general agencies, we deploy <b>personnel dedicated specifically to healthcare</b> to ensure
+              medical accuracy.</p>
+            <ul class="deliv-list">
+              <li>Healthcare-specialist editors</li>
+              <li>Medical content coordinators</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+            </div>
+            <h3>Premium Specialty Videos</h3>
+          </div>
+          <div class="deliv-content">
+            <p>We pivot to <b>cinematic storytelling</b> for department videos, making your super-specialty wings look
+              world-class.</p>
+            <ul class="deliv-list">
+              <li>Gimbal cinematic direction</li>
+              <li>Department walkthroughs</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Faster Event Coverage</h3>
+          </div>
+          <div class="deliv-content">
+            <p>We provide same-day highlight reels and quick doctor bytes <b>during the event itself</b> so momentum
+              isn't lost.</p>
+            <ul class="deliv-list">
+              <li>Same-day highlight reels</li>
+              <li>Live in-event social snippets</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="22"></line>
+              </svg>
+            </div>
+            <h3>Podcast Multi-Content Engine</h3>
+          </div>
+          <div class="deliv-content">
+            <p>One podcast shoot yields <b>multiple content pieces</b> — short reels, clips, and snippets to fuel a
+              month's pipeline.</p>
+            <ul class="deliv-list">
+              <li>10–15 short reels per podcast</li>
+              <li>Educational snippet edits</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3>Proper Coordination Workflow</h3>
+          </div>
+          <div class="deliv-content">
+            <p>Structured monthly shoot planning, shared approvals, and organized backups drastically reduce follow-ups.
+            </p>
+            <ul class="deliv-list">
+              <li>Monthly shoot calendar</li>
+              <li>Shared approval workflow</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deliv-item">
+          <div class="deliv-item-header">
+            <div class="deliv-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3>Consistent Brand Look</h3>
+          </div>
+          <div class="deliv-content">
+            <p>We eradicate visual inconsistency across 42 departments through <b>unified subtitle styling</b> and
+              professional tones.</p>
+            <ul class="deliv-list">
+              <li>Standardised caption system</li>
+              <li>Consistent reel aesthetics</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
+
+  <div class="page">
+    <div class="brand-mark"></div>
+    <div class="page-eyebrow">Pixlate × Fortis</div>
+    <div class="page-foot">04 · Our Offer</div>
+    <div class="page-no">/ 04</div>
+
+    <div class="page-body">
+      <div class="dot-eyebrow">Our Offer</div>
+
+      <h1 class="offer-headline" style="margin-top: 6mm; font-size: 42pt;">
+        A <em>partnership</em>
+        retainer model, built for <em>trust</em>.
+      </h1>
+
+      <p class="offer-sub" style="font-size: 10pt; margin-bottom: 6mm; max-width: 88%;">
+        Curated exclusively for a top-tier institution with immense growth potential, we have designed a transparent,
+        all-inclusive monthly retainer tailored to Fortis Mohali's exact requirements. This model covers every
+        deliverable outlined in this strategy — with no separate per-reel or per-shoot charges.
+      </p>
+
+      <div class="offer-card" style="padding: 8mm;">
+        <div class="offer-card-inner">
+          <div class="offer-tag" style="margin-bottom: 6mm;">Partnership Pricing</div>
+
+          <div class="price-block" style="margin-bottom: 6mm;">
+            <span class="price-currency" style="font-size: 24pt; margin-top: 4mm;">₹</span>
+            <span class="price-number" style="font-size: 64pt;">1,24,999</span>
+            <span class="price-period" style="font-size: 12pt; margin-top: 6mm;">/ month <br>(Exclusive of Applicable
+              Taxes)</span>
+          </div>
+
+          <div class="offer-includes" style="gap: 2.5mm 6mm; margin-bottom: 5mm;">
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Monthly content planning
+              &amp; shoot calendar</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 15–20 doctor reels/month,
+              end-to-end</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 1–2 cinematic specialty
+              videos</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Event coverage
+              (rapid-turnaround same-day delivery)</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 1 podcast shoot →
+              multi-format content</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Dedicated healthcare content
+              team</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Pro cinema gear, mics &amp;
+              lighting</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Branded subtitle &amp;
+              motion graphics system</div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Fixed monthly shoot days
+            </div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Committed monthly production
+              capacity (subject to shoot availability)
+            </div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Priority response workflow
+            </div>
+            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Monthly performance &amp;
+              growth report</div>
+          </div>
+
+          <div class="offer-note" style="margin-top: 4mm; padding-top: 4mm; font-size: 8pt;">
+            *Partnership-first pricing locked for the first 6 months. Add-on services (paid media, OOH adaptations,
+            EN/HI/PA versioning) quoted separately. Terms shared on engagement.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="brand-mark"></div>
+    <div class="page-eyebrow">Pixlate Digital</div>
+    <div class="page-foot">05 · Let's Talk</div>
+    <div class="page-no">/ 05</div>
+
+    <div class="page-body">
+      <h1 class="contact-headline" style="margin-top: 4mm; font-size: 64pt; line-height: 0.7;">
+        <em style="font-size: 0.5em;">let's</em><br>
+        talk in<br>
+        person.
+      </h1>
+
+      <p class="contact-sub" style="font-size: 11pt; margin-bottom: 10mm;margin-top:10mm;">
+        We'd love to walk you through how we'd approach Fortis Mohali in detail — the calendar, the shoot rhythm, the
+        first 30 days.
+      </p>
+
+      <div class="contact-grid" style="gap: 5mm; grid-template-columns: 1fr;">
+        <div class="contact-block" style="padding: 5mm;">
+          <div class="label">Email</div>
+          <div class="val small" style="font-size: 13pt;">reach@pixlate.digital</div>
+          <div class="desc" style="font-size: 8.5pt;">For pitch responses, briefs &amp; commercials.</div>
+        </div>
+        <div class="contact-block" style="padding: 5mm;">
+          <div class="label">Primary Contact</div>
+          <div class="val small" style="font-size: 15pt; margin-bottom: 2mm;">Pardeep Singh</div>
+          <div style="font-size: 13pt; font-weight: 700; margin-bottom: 2mm; color: var(--ink);">+91 79863 88768</div>
+          <div
+            style="font-size: 10pt; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;">
+            Sr. Manager - Client Relations</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
+
 </html>
