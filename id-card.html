@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixlate Digital - ID Card Template</title>
+
+<style>
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: local('Arial'); /* Fallback for local viewing */
+  }
+
+  :root {
+    --red: #fa3737; 
+    --red-deep: #d12c2c;
+    --grey: #c8c8c8;
+    --grey-2: #F5F5F5;
+    --ink: #222222; 
+    --ink-2: #333333; 
+    --muted: #5C5C5C;
+    --white: #FFFFFF;
+    --display: 'Neue Montreal', system-ui, sans-serif;
+  }
+
+  body {
+    background: #e0e0e0;
+    font-family: var(--display);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Standard ID Card Dimensions (Portrait) */
+  .id-card {
+    width: 54mm;
+    height: 86mm;
+    background: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  /* ==================================
+     FRONT OF ID CARD
+     ================================== */
+  .card-front .header {
+    background: var(--ink);
+    height: 35%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 6mm;
+  }
+
+  /* Pixlate Logo Graphic */
+  .logo-mark {
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+  .logo-mark::before, .logo-mark::after {
+    content: "";
+    position: absolute;
+    width: 12px; height: 12px;
+  }
+  .logo-mark::before {
+    background: var(--red);
+    top: 0; left: 0; z-index: 2;
+  }
+  .logo-mark::after {
+    background: var(--grey);
+    bottom: 0; right: 0; z-index: 1;
+  }
+
+  /* Employee Photo Profile */
+  .profile-pic-container {
+    position: absolute;
+    bottom: -15mm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30mm;
+    height: 30mm;
+    border-radius: 50%;
+    background: var(--grey-2);
+    border: 3px solid var(--white);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .profile-pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-front .body {
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 18mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .employee-name {
+    font-size: 14pt;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 2px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .employee-title {
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+  .divider {
+    width: 10mm;
+    height: 2px;
+    background: var(--grey);
+    margin: 4mm 0;
+  }
+
+  .employee-id {
+    font-size: 7.5pt;
+    color: var(--muted);
+    margin-bottom: 1mm;
+  }
+
+  .employee-id span {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .card-front .footer {
+    background: var(--red);
+    color: var(--white);
+    text-align: center;
+    padding: 3mm 0;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ==================================
+     BACK OF ID CARD
+     ================================== */
+  .card-back {
+    background: var(--ink);
+    color: var(--white);
+    padding: 6mm;
+    text-align: left;
+  }
+
+  .card-back .logo-mark {
+    margin-bottom: 6mm;
+  }
+
+  .info-group {
+    margin-bottom: 4mm;
+  }
+
+  .info-label {
+    font-size: 6pt;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1px;
+  }
+
+  .info-val {
+    font-size: 8pt;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .qr-placeholder {
+    width: 18mm;
+    height: 18px;
+    background: var(--white);
+    margin: 6mm auto 0;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .qr-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .return-policy {
+    font-size: 6pt;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin-top: auto;
+    line-height: 1.4;
+    padding-top: 5mm;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="id-card card-front">
+    <div class="header">
+      <div class="logo-mark"></div>
+      
+      <div class="profile-pic-container">
+        <img src="https://ui-avatars.com/api/?name=Pardeep+Singh&background=c8c8c8&color=222222&size=150" alt="Pardeep Singh">
+      </div>
+    </div>
+    
+    <div class="body">
+      <h2 class="employee-name">Pardeep Singh</h2>
+      <p class="employee-title">Sr. Mgr - Client Relations</p>
+      
+      <div class="divider"></div>
+      
+      <p class="employee-id">ID NO: <span>PIX-2024-042</span></p>
+      <p class="employee-id">BLOOD GROUP: <span style="color: var(--red);">O+</span></p>
+    </div>
+    
+    <div class="footer">
+      Pixlate Digital
+    </div>
+  </div>
+
+  <div class="id-card card-back">
+    <div class="logo-mark"></div>
+    
+    <div class="info-group">
+      <div class="info-label">Emergency Contact</div>
+      <div class="info-val">+91 98765 43210</div>
+    </div>
+
+    <div class="info-group">
+      <div class="info-label">Office Address</div>
+      <div class="info-val">
+        Pixlate Digital HQ<br>
+        Sector 75, Mohali,<br>
+        Punjab, India
+      </div>
+    </div>
+
+    <div class="info-group">
+      <div class="info-label">Website</div>
+      <div class="info-val" style="color: var(--red);">pixlate.digital</div>
+    </div>
+
+    <div class="qr-placeholder">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pixlate.digital&bgcolor=ffffff&color=222222" alt="QR Code">
+    </div>
+
+    <div class="return-policy">
+      This card is the property of Pixlate Digital. If found, please return to the office address above.
+    </div>
+  </div>
+
+</body>
+</html>

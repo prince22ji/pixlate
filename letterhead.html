@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixlate Digital - Letterhead</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .letterhead-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20mm;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-section h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #222;
+        }
+        .logo-section p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+            color: #444;
+        }
+        .contact-info p {
+            margin: 3px 0;
+        }
+        .content {
+            margin-top: 40px;
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #333;
+            min-height: 150mm;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 20mm;
+            right: 20mm;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .letterhead-container {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="letterhead-container">
+    <div class="header">
+        <div class="logo-section">
+            <h1>Pixlate Digital</h1>
+            <p>Creative Marketing Agency</p>
+        </div>
+        <div class="contact-info">
+            <p><strong>Email:</strong> reach@pixlate.digital</p>
+            <p><strong>Hours:</strong> Mon – Sat · 10am to 7pm</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <p>Date: June 25, 2026</p>
+        <p>To,</p>
+        <p>[Recipient Name]</p>
+        <p>[Company Name]</p>
+        <br>
+        <p><strong>Subject: [Letter Subject]</strong></p>
+        <br>
+        <p>Dear [Recipient Name],</p>
+        <p>[Type the main body of your letter here. This space is designed to hold your official communications, proposals, or notices.]</p>
+        <br><br>
+        <p>Sincerely,</p>
+        <p><strong>[Your Name]</strong><br>
+        Pixlate Digital</p>
+    </div>
+
+    <div class="footer">
+        <p>Pixlate Digital — Best Content Marketing & Creative Agency in India</p>
+        <p>In partnership with BreakingAd Technologies.</p>
+    </div>
+</div>
+
+</body>
+</html>

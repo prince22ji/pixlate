@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Pixlate Digital</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            margin: 0;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+        .logo-sub {
+            font-size: 13px;
+            color: #7f8c8d;
+            display: block;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .company-details {
+            text-align: right;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .company-details strong {
+            color: #2c3e50;
+        }
+        .billing-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .bill-to h3, .invoice-meta h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .invoice-meta {
+            text-align: right;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+        td {
+            font-size: 15px;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .total-section {
+            width: 50%;
+            float: right;
+        }
+        .total-row td {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1a1a1a;
+            border-bottom: none;
+            border-top: 2px solid #2c3e50;
+        }
+        .clear {
+            clear: both;
+        }
+        .notes {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #555;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #2c3e50;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #95a5a6;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="invoice-box">
+    <div class="header">
+        <div>
+            <h1 class="logo">Pixlate Digital.</h1>
+            <span class="logo-sub">Creative Marketing Agency</span>
+        </div>
+        <div class="company-details">
+            <strong>Pixlate Digital</strong><br>
+            Ludhiana, Punjab, India<br>
+            Email: reach@pixlate.digital<br>
+            Website: www.pixlate.digital
+        </div>
+    </div>
+
+    <div class="billing-info">
+        <div class="bill-to">
+            <h3>Billed To:</h3>
+            <strong>[Client Company Name]</strong><br>
+            [Client Contact Name]<br>
+            [Client Address Line 1]<br>
+            [Client Address Line 2]<br>
+            [Client Email]
+        </div>
+        <div class="invoice-meta">
+            <h3>Invoice Details:</h3>
+            <strong>Invoice No:</strong> #PX-2026-001<br>
+            <strong>Date:</strong> June 22, 2026<br>
+            <strong>Due Date:</strong> July 06, 2026
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description of Service</th>
+                <th class="text-center">Qty / Hrs</th>
+                <th class="text-right">Rate (₹)</th>
+                <th class="text-right">Amount (₹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Content Marketing</strong><br><span style="font-size:13px; color:#777;">SEO-driven blogs and editorial content</span></td>
+                <td class="text-center">1</td>
+                <td class="text-right">25,000</td>
+                <td class="text-right">25,000</td>
+            </tr>
+            <tr>
+                <td><strong>Performance Marketing</strong><br><span style="font-size:13px; color:#777;">Meta & Google Ads Management (June)</span></td>
+                <td class="text-center">1</td>
+                <td class="text-right">40,000</td>
+                <td class="text-right">40,000</td>
+            </tr>
+            <tr>
+                <td><strong>Short-Form Video & Reels</strong><br><span style="font-size:13px; color:#777;">Shooting, editing, and optimization of 8 Reels</span></td>
+                <td class="text-center">8</td>
+                <td class="text-right">4,500</td>
+                <td class="text-right">36,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="total-section">
+        <table>
+            <tr>
+                <td>Subtotal:</td>
+                <td class="text-right">₹1,01,000</td>
+            </tr>
+            <tr>
+                <td>Tax (GST 18%):</td>
+                <td class="text-right">₹18,180</td>
+            </tr>
+            <tr class="total-row">
+                <td>Total Due:</td>
+                <td class="text-right">₹1,19,180</td>
+            </tr>
+        </table>
+    </div>
+    <div class="clear"></div>
+
+    <div class="notes">
+        <strong>Payment Details:</strong><br>
+        Please remit payment to the following bank account within 14 days of receiving this invoice.<br><br>
+        Bank Name: [Your Bank Name]<br>
+        Account Name: Pixlate Digital<br>
+        Account Number: [Your Account Number]<br>
+        IFSC Code: [Your IFSC Code]
+    </div>
+
+    <div class="footer">
+        Thank you for your business! <br>
+        © 2026 Pixlate Digital. All rights reserved. | In partnership with BreakingAd Technologies.
+    </div>
+</div>
+
+</body>
+</html>

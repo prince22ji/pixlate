@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixlate × Fortis Mohali — Focused Pitch</title>
+  <title>Pixlate × Fortis Mohali — Strategic Partnership</title>
 
   <style>
     /* ==============================================================
@@ -47,23 +47,18 @@
          COVER IMAGE — adjust these to reposition / resize the image
          on page 1 without touching anything else.
          ============================================================== */
-      --img-top: 50%;
-      /* distance from the top of the page   */
-      --img-opacity: 0.92;
-      /* 0 = invisible, 1 = fully opaque      */
-      --img-radius: 10px 0 0 10px;
-      /* border-radius (corners)          */
-      --img-width: 100%;
+      --img-top: 50%;          /* distance from the top of the page   */
+      --img-opacity: 0.92;     /* 0 = invisible, 1 = fully opaque      */
+      --img-radius: 10px 0 0 10px; /* border-radius (corners)          */
+      --img-width:100%;
       --img-height: auto;
       --img-scale: 0.5;
 
       /* ==============================================================
          COLLAB LOGO STRIP — adjust to reposition the logos badge
          ============================================================== */
-      --logo-top: 52%;
-      /* vertical position on the page        */
-      --logo-left: 14mm;
-      /* distance from the left edge          */
+      --logo-top: 52%;         /* vertical position on the page        */
+      --logo-left: 14mm;       /* distance from the left edge          */
 
       /* Exact Theme Colors Provided */
       --red: #fa3737;
@@ -124,7 +119,6 @@
     }
 
     @media screen {
-
       html,
       body {
         background: #d0d0d0;
@@ -141,7 +135,6 @@
     }
 
     @media print {
-
       html,
       body {
         background: white;
@@ -620,7 +613,7 @@
     }
 
     /* ============================================================
-   PAGE 4 (04) — OUR OFFER
+   PAGE 4 (04) — OUR OFFER & BIFURCATION
    ============================================================ */
     .offer-headline {
       font-family: var(--display);
@@ -678,7 +671,7 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 8mm;
+      margin-bottom: 6mm;
       position: relative;
       z-index: 2;
     }
@@ -727,36 +720,61 @@
       letter-spacing: -0.01em;
     }
 
-    .offer-includes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4mm 8mm;
-      margin-bottom: 4mm;
+    /* Itemized Pricing Styles */
+    .itemized-pricing {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5mm;
       position: relative;
       z-index: 2;
     }
 
-    .offer-include {
+    .pricing-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 3.5mm;
+    }
+
+    .pricing-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pricing-item .name {
+      font-size: 10pt;
+      line-height: 1.3;
+      font-weight: 500;
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      font-size: 10pt;
-      line-height: 1.4;
-      font-weight: 500;
+      color: white;
     }
 
-    .offer-include .check {
-      width: 18px;
-      height: 18px;
-      background: var(--red);
-      border-radius: 50%;
-      display: flex;
+    .pricing-item .name::before {
+      content: "✓";
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      width: 14px;
+      height: 14px;
+      background: var(--red);
+      color: white;
+      border-radius: 50%;
+      font-size: 9px;
       font-weight: 700;
       flex-shrink: 0;
       margin-top: 1px;
+    }
+
+    .pricing-item .value {
+      font-family: var(--display);
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--red);
+      text-align: right;
+      flex-shrink: 0;
     }
 
     /* ============================================================
@@ -831,36 +849,22 @@
       line-height: 1.4;
     }
 
-    .contact-signature {
-      position: absolute;
-      bottom: 25mm;
-      left: 18mm;
-      font-family: var(--script);
-      color: var(--red);
-      font-size: 28pt;
-      font-style: italic;
-      transform: rotate(-3deg);
-      transform-origin: left;
-    }
-
-    /* Page-1 collab logo strip — controlled by :root variables above */
+    /* Cover Page Specific Styles */
     .collab-strip {
       position: absolute;
       top: var(--logo-top);
-      left: 45%;
-      transform: translateX(-50%);
+      left: var(--logo-left);
       z-index: 3;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      align-items: flex-start;
+      gap: 12px;
     }
 
-    /* Page-1 cover image — controlled entirely by :root variables above */
     .cover-img {
       position: absolute;
       top: var(--img-top);
-      right: var(--img-right);
+      right: 0;
       width: var(--img-width);
       height: var(--img-height);
       object-fit: cover;
@@ -878,19 +882,12 @@
   <div class="page">
     <div class="brand-mark"></div>
 
+    <img src="manequin.png" alt="" class="cover-img" />
+
     <div class="collab-strip">
-      <div style="display: flex; align-items: center; gap: 150px;">
-        <img src="fortis.png" alt="Fortis Healthcare"
-          style="height: 280px; width: auto; display: block; object-fit: contain;" />
-        <div style="position: relative; width: 180px; height: 180px; flex-shrink: 0;">
-          <div
-            style="position: absolute; width: 120px; height: 120px; background: #ED3224; top: 0; left: 15px; z-index: 2;">
-          </div>
-          <div
-            style="position: absolute; width: 120px; height: 120px; background: #c8c8c8; bottom: 0; right: 0; z-index: 1;">
-          </div>
-        </div>
-      </div>
+      <img src="fortis.png"
+        alt="Fortis Healthcare"
+        style="position:absolute;height: 300px; width: auto; display: block; object-fit: contain; left:50px;top:50px" />
     </div>
 
     <div class="page-body"
@@ -899,11 +896,17 @@
       <div class="dot-eyebrow" style="margin-bottom: 8mm;">
         Strategic Proposal
       </div>
-      <h1
-        style="font-family: var(--display); font-weight: 700; font-size: 65pt; line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 6mm; color: var(--ink);">
+
+      <div style="position: absolute; top: 60mm; right: 18mm; z-index: 3;">
+        <div style="position: relative; width: 150px; height: 150px; flex-shrink: 0;">
+          <div style="position: absolute; width: 99px; height: 99px; background: var(--red); top: 0; left: 15px; z-index: 2;"></div>
+          <div style="position: absolute; width: 99px; height: 99px; background: var(--grey); bottom: 0; right: 0; z-index: 1;"></div>
+        </div>
+      </div>
+
+      <h1 style="font-family: var(--display); font-weight: 700; font-size: 65pt; line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 6mm; color: var(--ink);">
         Strategic Content<br>
-        <em
-          style="font-family: var(--script); color: var(--red); font-style: italic; font-size: 1.1em;">Partnership.</em>
+        <em style="font-family: var(--script); color: var(--red); font-style: italic; font-size: 1.1em;">Partnership.</em>
       </h1>
 
       <p style="font-size: 12pt; color: var(--muted); max-width: 70%; line-height: 1.55; margin-bottom: 20mm;">
@@ -911,34 +914,26 @@
         strategy for the region's leading healthcare institution.
       </p>
 
-      <div
-        style="margin-top: auto; border-top: 1px solid var(--grey-3); padding-top: 8mm; padding-left: 4mm; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
+      <div style="margin-top: auto; border-top: 1px solid var(--grey-3); padding-top: 8mm; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
         <div>
-          <div
-            style="font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 2mm;">
-            Presented To</div>
+          <div style="font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 2mm;">
+            Presented To
+          </div>
           <div style="display: flex; align-items: center; gap: 8px;">
-            <img src="fortis.png" alt="Fortis Healthcare"
-              style="height: 22px; width: auto; display: block; object-fit: contain;" />
-            <span style="font-family: var(--display); font-size: 16pt; font-weight: 700; color: #09a954;">Fortis
-              Mohali</span>
+            <img src="fortis.png" alt="Fortis Healthcare" style="height: 22px; width: auto; display: block; object-fit: contain;" />
+            <span style="font-family: var(--display); font-size: 16pt; font-weight: 700; color: #09a954;">Fortis Mohali</span>
           </div>
         </div>
-        <div style="margin-left:3em">
-          <div
-            style="font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 2mm;">
-            Prepared By</div>
+        <div>
+          <div style="font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 2mm;">
+            Prepared By
+          </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <div style="position: relative; width: 26px; height: 26px; flex-shrink: 0;">
-              <div
-                style="position: absolute; width: 17px; height: 17px; background: #ED3224; top: 0; left: 2px; z-index: 2;">
-              </div>
-              <div
-                style="position: absolute; width: 17px; height: 17px; background: #c8c8c8; bottom: 0; right: 0; z-index: 1;">
-              </div>
+              <div style="position: absolute; width: 17px; height: 17px; background: var(--red); top: 0; left: 2px; z-index: 2;"></div>
+              <div style="position: absolute; width: 17px; height: 17px; background: var(--grey); bottom: 0; right: 0; z-index: 1;"></div>
             </div>
-            <span style="font-family: var(--display); font-size: 16pt; font-weight: 700; color: var(--red);">Pixlate
-              Digital</span>
+            <span style="font-family: var(--display); font-size: 16pt; font-weight: 700; color: var(--red);">Pixlate Digital</span>
           </div>
         </div>
       </div>
@@ -956,16 +951,8 @@
       <div class="dot-eyebrow">The Audit</div>
 
       <h2 class="fortis-headline" style="margin-top: 6mm; font-size: 36pt;">
-        <img src="fortis.png" alt="Fortis Healthcare" style="height: 44px;
-    width: auto;
-    display: inline-block;
-    object-fit: contain;
-    vertical-align: middle;
-    margin-right: -10px;
-    margin-bottom: 12px;" />
-        <span style="font-family: var(--display); font-weight: 700; color: #09a954;">Fortis Mohali</span><br> a <span
-          class="red">leading hospital</span>
-        <br>poised for digital scale.
+        Fortis Mohali — a <span class="red">premier</span> healthcare institution<br>
+        poised for digital scale.
       </h2>
 
       <p class="fortis-lead" style="font-size: 10pt; margin-bottom: 6mm;">
@@ -1177,10 +1164,6 @@
           <div class="deliv-content">
             <p>Unlike general agencies, we deploy <b>personnel dedicated specifically to healthcare</b> to ensure
               medical accuracy.</p>
-            <ul class="deliv-list">
-              <li>Healthcare-specialist editors</li>
-              <li>Medical content coordinators</li>
-            </ul>
           </div>
         </div>
 
@@ -1306,8 +1289,7 @@
 
       <p class="offer-sub" style="font-size: 10pt; margin-bottom: 6mm; max-width: 88%;">
         Curated exclusively for a top-tier institution with immense growth potential, we have designed a transparent,
-        all-inclusive monthly retainer tailored to Fortis Mohali's exact requirements. This model covers every
-        deliverable outlined in this strategy — with no separate per-reel or per-shoot charges.
+        all-inclusive monthly retainer tailored to Fortis Mohali's exact requirements. To ensure complete clarity, we have broken down our partnership into exact per-deliverable values below.
       </p>
 
       <div class="offer-card" style="padding: 8mm;">
@@ -1317,35 +1299,63 @@
           <div class="price-block" style="margin-bottom: 6mm;">
             <span class="price-currency" style="font-size: 24pt; margin-top: 4mm;">₹</span>
             <span class="price-number" style="font-size: 64pt;">1,24,999</span>
-            <span class="price-period" style="font-size: 12pt; margin-top: 6mm;">/ month <br>(Inclusive of GST)</span>
+            <span class="price-period" style="font-size: 12pt; margin-top: 6mm;">/ month <br>(Including GST)</span>
           </div>
 
-          <div class="offer-includes" style="gap: 2.5mm 6mm; margin-bottom: 5mm;">
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Monthly content planning
-              &amp; shoot calendar</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 15–20 doctor reels/month,
-              end-to-end</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 1–2 cinematic specialty
-              videos</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Event coverage
-              (rapid-turnaround same-day delivery)</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> 1 podcast shoot →
-              multi-format content</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Dedicated healthcare content
-              team</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Pro cinema gear, mics &amp;
-              lighting</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Branded subtitle &amp;
-              motion graphics system</div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Fixed monthly shoot days
+          <div class="itemized-pricing">
+            <div class="pricing-item">
+              <span class="name">
+                <div>
+                  High-Quality Doctor Reels <br>
+                  <small style="opacity: 0.7; font-weight: 400; display: block; margin-top: 3px; line-height: 1.4;">
+                    (20 Assets/month baseline) Includes video shooting, cinematic shots, professional voiceovers, engaging visuals &amp; copyright-free music.
+                  </small>
+                </div>
+              </span>
+              <span class="value">₹3,349 / reel</span>
             </div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Committed monthly production
-              capacity (subject to shoot availability)
+            <div class="pricing-item">
+              <span class="name">
+                <div>
+                  Premium Specialty Video <br>
+                  <small style="opacity: 0.7; font-weight: 400; display: block; margin-top: 3px; line-height: 1.4;">
+                    (2-3 Min Video + 1 Highlight) Showcases full facility, department, doctors, team &amp; technology with premium lighting, voiceovers &amp; cinematic shots.
+                  </small>
+                </div>
+              </span>
+              <span class="value">₹20,000 / video</span>
             </div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Priority response workflow
+            <div class="pricing-item">
+              <span class="name">
+                <div>
+                  Podcast Multi-Content Engine <br>
+                  <small style="opacity: 0.7; font-weight: 400; display: block; margin-top: 3px; line-height: 1.4;">
+                    (1 Full Edited Podcast + 1 Highlight + 3-4 Reels) Includes 3-camera setup, premium lighting &amp; studio-level audio recording.
+                  </small>
+                </div>
+              </span>
+              <span class="value">₹20,000 / shoot</span>
             </div>
-            <div class="offer-include" style="font-size: 9pt;"><span class="check">✓</span> Monthly performance &amp;
-              growth report</div>
+            <div class="pricing-item">
+              <span class="name">
+                <div>
+                  Event Coverage <br>
+                  <small style="opacity: 0.7; font-weight: 400; display: block; margin-top: 3px; line-height: 1.4;">
+                    (1 Event per month) Includes still photography, cinematic video coverage &amp; event highlight reels.
+                  </small>
+                </div>
+              </span>
+              <span class="value">₹18,000 / event</span>
+            </div>
+            <div class="pricing-item" style="padding-top: 2mm;">
+              <span class="name">Content Planning &amp; Strategy</span>
+              <span class="value" style="color: white; font-weight: 600;">Included</span>
+            </div>
+          </div>
+
+          <div class="offer-note" style="margin-top: 6mm; padding-top: 4mm; font-size: 8pt; border-top: 1px solid rgba(255,255,255,0.15);">
+            *Partnership pricing locked for the first 6 months. Subject to dedicated monthly shoot day availability. Add-on services (paid media, OOH adaptations,
+            EN/HI/PA versioning) quoted separately. Terms shared on engagement.
           </div>
         </div>
       </div>
@@ -1382,7 +1392,7 @@
           <div style="font-size: 13pt; font-weight: 700; margin-bottom: 2mm; color: var(--ink);">+91 79863 88768</div>
           <div
             style="font-size: 10pt; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;">
-            Sr. Manager - Client Relations</div>
+            Manager - Client Relations</div>
         </div>
       </div>
     </div>
