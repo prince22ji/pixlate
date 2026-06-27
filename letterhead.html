@@ -26,22 +26,18 @@
             padding-bottom: 20px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
         }
-        .logo-section h1 {
-            margin: 0;
-            font-size: 28px;
-            color: #222;
-        }
-        .logo-section p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            color: #555;
+        .logo-section svg {
+            height: 65px; /* Scaled for the letterhead header */
+            width: auto;
+            display: block;
         }
         .contact-info {
             text-align: right;
             font-size: 14px;
             color: #444;
+            line-height: 1.4;
         }
         .contact-info p {
             margin: 3px 0;
@@ -81,8 +77,12 @@
 <div class="letterhead-container">
     <div class="header">
         <div class="logo-section">
-            <h1>Pixlate Digital</h1>
-            <p>Creative Marketing Agency</p>
+            <svg viewBox="0 0 580 260" xmlns="http://www.w3.org/2000/svg">
+                <rect x="330" y="20" width="145" height="145" fill="#FF3333"/>
+                <rect x="420" y="100" width="145" height="145" fill="#C4C4C4" fill-opacity="0.85"/>
+                <text x="15" y="240" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="140" fill="#000000" letter-spacing="-3">Pixlate</text>
+                <text x="432" y="185" font-family="Arial, Helvetica, sans-serif" font-weight="normal" font-size="38" fill="#222222">Digital</text>
+            </svg>
         </div>
         <div class="contact-info">
             <p><strong>Email:</strong> reach@pixlate.digital</p>

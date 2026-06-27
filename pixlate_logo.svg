@@ -3,5 +3,5 @@
   <rect x="420" y="100" width="145" height="145" fill="#c4c4c4" fill-opacity="0.5" />
   
   <text x="45" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="100" fill="#000000" letter-spacing="-4">Pixlate</text>
-  <text x="425" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-weight="100" font-size="50" fill="#222222" letter-spacing="-1">Digital</text>
+  <text x="425" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-weight="100" font-size="50" fill="#6d6d6d" letter-spacing="-1">Digital</text>
 </svg>
